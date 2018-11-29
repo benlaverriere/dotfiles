@@ -1,0 +1,10 @@
+[color]
+	ui = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Ben LaVerriere
+	email = benlaverriere@gmail.com
