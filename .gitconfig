@@ -1,5 +1,3 @@
-[color]
-	ui = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -8,3 +6,17 @@
 [user]
 	name = Ben LaVerriere
 	email = benlaverriere@gmail.com
+[color]
+    gui = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = vim
+    attributesfile = ~/.gitattributes
+#[diff "image"]
+#    command = ~/bin/git-imgdiff
+[alias]
+    up = pull --rebase --autostash
