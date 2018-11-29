@@ -22,5 +22,7 @@ export EDITOR="vim"
 
 alias ll="ls -gAh --color=auto"
 
-export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(parse_git_context)$Color_Off\$ "
+source git-prompt.sh
+
+export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\$ "
 
