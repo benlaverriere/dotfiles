@@ -2,16 +2,28 @@ tap "goles/battery"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-cask "java"
 
 brew "git"
+brew "goles/battery/battery"
 brew "python"
-
-# Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
-
 brew "spark"
 brew "the_silver_searcher"
 brew "watch"
 brew "wget"
-brew "goles/battery/battery"
+
+cask "alfred"
+cask "flux"
+cask "google-chrome"
+cask "iterm2"
+cask "java"
+cask "jetbrains-toolbox"
+cask "slack"
+cask "spectacle"
+cask "spotify"
+cask "spotify-notifications"
+
+# add license to:
+cask "air-server"
+cask "sublime-text"
+cask "vanilla"
