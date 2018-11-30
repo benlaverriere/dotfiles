@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:~/bin:$PATH
 
 set -o ignoreeof
 
@@ -20,9 +20,10 @@ fi;
 
 export EDITOR="vim"
 
-alias ll="ls -gAh --color=auto"
+alias ll="ls -oAh --color=auto"
 
-source ~/git-prompt.sh
+source colors.sh
+source git-prompt.sh
 
 export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\$ "
 
