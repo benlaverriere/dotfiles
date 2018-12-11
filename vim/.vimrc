@@ -15,3 +15,6 @@ au FileType gitcommit set textwidth=72
 set colorcolumn=+1
 
 set ignorecase smartcase
+set hlsearch
+
+set laststatus=2
