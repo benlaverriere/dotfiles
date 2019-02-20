@@ -1,22 +1,24 @@
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[user]
-	name = Ben LaVerriere
-	email = benlaverriere@gmail.com
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[include]
+  # [user] values
+  path = ~/.gitconfig_local
 [color]
-    gui = true
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
+  gui = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [core]
-    excludesfile = ~/.gitignore_global
-    editor = vim
-    attributesfile = ~/.gitattributes
-#[diff "image"]
-#    command = ~/bin/git-imgdiff
+  excludesfile = ~/.gitignore_global
+  editor = vim
+  attributesfile = ~/.gitattributes
 [alias]
-    up = pull --rebase --autostash
+  up = pull --rebase --autostash
+[push]
+  default = current
+[credential]
+	helper = osxkeychain
