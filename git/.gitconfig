@@ -17,7 +17,12 @@
   editor = vim
   attributesfile = ~/.gitattributes
 [alias]
+  # credit to https://haacked.com/archive/2014/07/28/github-flow-aliases/ for most of these
   up = pull --rebase --autostash
+  cob = checkout --track origin/master -b
+  delete-merged = "!f() { git branch --merged ${1-master} | ag -v " ${1-master}$" | xargs git branch -d; }; f"
+  tidy = "!f() { git up && git checkout ${1-master} && git up && git delete-merged ${1-master}; }; f"
+  sup = status -vv
 [push]
   default = current
 [credential]
