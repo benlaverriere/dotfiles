@@ -32,9 +32,9 @@ source git-prompt.sh
 export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\$ "
 
 alias todo="git diff --name-only origin/master | xargs ag TODO"
-alias weather='curl -s wttr.in?format="%c%20%t%20%m"'
+alias weather='curl -s wttr.in?format="%c%20%20%t%20%m"'
 alias now='date +"%A %d %B %H:%M"'
-alias sup='echo $(now) $(weather) $(battery)'
+alias sup='echo $(now) "$(weather)" $(battery)'
 
 # machine-specific addenda
 # arguably this shouldn't be a fixed path but...
