@@ -25,6 +25,7 @@ fi;
 export EDITOR="vim"
 
 alias ll="ls -oAhG"
+alias cat="bat"
 
 source colors.sh
 source git-prompt.sh

@@ -23,6 +23,8 @@
   delete-merged = "!f() { git branch --merged ${1-master} | ag -v " ${1-master}$" | xargs git branch -d; }; f"
   tidy = "!f() { git up && git checkout ${1-master} && git up && git delete-merged ${1-master}; }; f"
   sup = status -vv
+[pager]
+  status = true
 [push]
   default = current
 [credential]
