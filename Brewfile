@@ -5,6 +5,7 @@ tap "homebrew/core"
 
 brew "bat"
 brew "colordiff"
+brew "diff-so-fancy"
 brew "git"
 brew "goles/battery/battery"
 brew "python"

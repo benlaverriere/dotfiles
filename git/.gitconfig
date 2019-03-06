@@ -16,6 +16,7 @@
   excludesfile = ~/.gitignore_global
   editor = vim
   attributesfile = ~/.gitattributes
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
   # credit to https://haacked.com/archive/2014/07/28/github-flow-aliases/ for most of these
   up = pull --rebase --autostash
