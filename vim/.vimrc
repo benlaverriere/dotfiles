@@ -12,7 +12,10 @@ set numberwidth=5
 set formatoptions=croqln
 set textwidth=120
 au FileType gitcommit set textwidth=72
+
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.thor set filetype=ruby
+au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
 
 set colorcolumn=+1
 
