@@ -1,6 +1,8 @@
 # dotfiles
 
-    (install Homebrew)
+[install Homebrew](https://brew.sh/)
+
+    $ git submodule update --remote --merge
     $ brew bundle --file=Brewfile
     $ stow bash
     $ stow git
