@@ -1,6 +1,8 @@
 filetype plugin indent on
 syntax on
 
+set backspace=indent,eol,start
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -23,3 +25,15 @@ set ignorecase smartcase
 set hlsearch
 
 set laststatus=2
+
+" options for vim-javascript
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_function             = "ƒ"
+map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL

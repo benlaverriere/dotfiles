@@ -26,6 +26,15 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
+# prefer Homebrewed vim over Apple default
+# (at the moment, mostly for `conceal` features)
+alias vi=/usr/local/bin/vim
+alias vim=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/vim
+
+alias ll="ls -oAhG"
+alias cat="bat"
+
 source colors.sh
 source git-prompt.sh
 

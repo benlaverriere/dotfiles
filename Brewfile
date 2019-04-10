@@ -16,6 +16,7 @@ brew "shellcheck"
 brew "spark"
 brew "stow"
 brew "the_silver_searcher"
+brew "vim"
 brew "watch"
 brew "wget"
 
