@@ -4,17 +4,21 @@ set -o ignoreeof
 
 # cf. https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile
 # Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+if command -v brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+  # shellcheck source=/dev/null
 	source "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
+  # shellcheck source=/dev/null
 	source /etc/bash_completion;
 fi;
 
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+if [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ]; then
+  # shellcheck source=/dev/null
+  . "$(brew --prefix)/etc/bash_completion.d/git-completion.bash"
 fi
 
 if [ -f ~/.bash_aliases ]; then
+  # shellcheck source=./.bash_aliases
   . ~/.bash_aliases
 fi
 
@@ -26,22 +30,14 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# prefer Homebrewed vim over Apple default
-# (at the moment, mostly for `conceal` features)
-alias vi=/usr/local/bin/vim
-alias vim=/usr/local/bin/vim
-export EDITOR=/usr/local/bin/vim
-
-alias ll="ls -oAhG"
-alias cat="bat"
-
-source colors.sh
-source git-prompt.sh
+source ./bin/colors.sh
+source ./bin/git-prompt.sh
 
 export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\n➽  "
-export EDITOR="vim"
+export EDITOR=/usr/local/bin/vim
 export PAGER="less -RF -+X"
 
 # machine-specific addenda
 # arguably this shouldn't be a fixed path but...
-for f in ~/dotfiles/bash/addenda/*; do source $f; done
+# shellcheck source=/dev/null
+for f in ~/dotfiles/bash/addenda/*; do source "$f"; done
