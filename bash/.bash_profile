@@ -14,7 +14,10 @@ if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
   . `brew --prefix`/etc/bash_completion.d/git-completion.bash
 fi
 
-alias g="git"
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 	complete -o default -o nospace -F _git g;
@@ -23,21 +26,12 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-export EDITOR="vim"
-export PAGER="less -RF -+X"
-
-alias ll="ls -oAhG"
-alias cat="bat"
-
 source colors.sh
 source git-prompt.sh
 
 export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\n➽  "
-
-alias todo="git diff --name-only origin/master | xargs ag TODO"
-alias weather='curl -s wttr.in?format="%c%20%20%t%20%m"'
-alias now='date +"%A %d %B %H:%M"'
-alias sup='echo $(now) "$(weather)" $(battery)'
+export EDITOR="vim"
+export PAGER="less -RF -+X"
 
 # machine-specific addenda
 # arguably this shouldn't be a fixed path but...
