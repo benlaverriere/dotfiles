@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 
 brew "bat"
+brew "black"
 brew "colordiff"
 brew "diff-so-fancy"
 brew "git"
