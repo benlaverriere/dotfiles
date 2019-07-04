@@ -7,3 +7,6 @@
 [submodule "vim/.vim/pack/benlaverriere/start/ale"]
 	path = vim/.vim/pack/benlaverriere/start/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "vimtex"]
+	path = vim/.vim/pack/benlaverriere/start/vimtex
+	url = https://github.com/lervag/vimtex
