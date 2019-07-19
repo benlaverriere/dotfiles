@@ -18,6 +18,7 @@ au FileType gitcommit set textwidth=72
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
+au BufRead,BufNewFile Fastfile set filetype=ruby
 
 set colorcolumn=+1
 

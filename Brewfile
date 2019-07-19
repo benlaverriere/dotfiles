@@ -33,6 +33,7 @@ cask "spectacle"
 cask "spotify"
 cask "spotify-notifications"
 cask "texshop"
+cask "trailer"
 cask "unshaky"
 
 # add license to:

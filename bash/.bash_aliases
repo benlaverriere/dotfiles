@@ -11,3 +11,6 @@ alias y="yarn"
 # (at the moment, mostly for `conceal` features)
 alias vi=/usr/local/bin/vim
 alias vim=/usr/local/bin/vim
+
+alias fastlane_=$(which fastlane)
+alias fastlane='bundle exec fastlane'
