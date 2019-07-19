@@ -1,27 +1,40 @@
+autocmd!
+
+" Filetype/syntax
 filetype plugin indent on
 syntax on
-
-set backspace=indent,eol,start
-
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set shiftround
-
-set number
-set numberwidth=5
-
-set formatoptions=croqln
-set textwidth=120
-au FileType gitcommit set textwidth=72
 
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
 au BufRead,BufNewFile Fastfile set filetype=ruby
 
+" General editing
+set backspace=indent,eol,start
+set formatoptions=croqln
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set shiftround
+
+" Line numbers
+set number
+set relativenumber
+set numberwidth=5
+
+" Cursor position
+hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+autocmd InsertEnter,InsertLeave * set cursorline! cursorcolumn!
+
+" Width/column
+set textwidth=120
+au FileType gitcommit set textwidth=72
+
 set colorcolumn=+1
 
+" Searching
 set ignorecase smartcase
 set hlsearch
 
