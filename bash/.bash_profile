@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:~/bin:$PATH
+export PATH=/usr/local/opt/qt5/bin:/usr/local/bin:~/bin:$PATH
 
 set -o ignoreeof
 
@@ -38,6 +38,8 @@ source git-prompt.sh
 export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\n➽  "
 export EDITOR=/usr/local/bin/vim
 export PAGER="less -RF -+X"
+export CPPFLAGS="-I/usr/local/opt/qt5/include"
+export LDFLAGS="-L/usr/local/opt/qt5/lib"
 
 # machine-specific addenda
 # arguably this shouldn't be a fixed path but...
