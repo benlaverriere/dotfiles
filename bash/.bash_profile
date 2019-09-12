@@ -45,3 +45,5 @@ export LDFLAGS="-L/usr/local/opt/qt5/lib"
 # arguably this shouldn't be a fixed path but...
 # shellcheck source=/dev/null
 for f in ~/dotfiles/bash/addenda/*; do source "$f"; done
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
