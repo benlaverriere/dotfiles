@@ -1,3 +1,4 @@
+" remember: `:so[urce] ~/.vimrc` to reload, or `:so %` while editing
 autocmd!
 
 " Filetype/syntax
@@ -49,11 +50,6 @@ packloadall
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
 silent! helptags ALL
-
-" Don't try to run lacheck on [La]TeX
-let g:ale_linters = {
-\   'tex': ['alex', 'chktex', 'proselint', 'redpen', 'textlint', 'vale', 'writegood'],
-\}
 
 " Navigate between ALE errors quickly
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
