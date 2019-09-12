@@ -7,7 +7,7 @@ syntax on
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
-au BufRead,BufNewFile Fastfile set filetype=ruby
+au BufRead,BufNewFile Fastfile, Matchfile, Pluginfile set filetype=ruby
 
 " General editing
 set backspace=indent,eol,start
@@ -30,8 +30,6 @@ autocmd InsertEnter,InsertLeave * set cursorline! cursorcolumn!
 
 " Width/column
 set textwidth=120
-au FileType gitcommit set textwidth=72
-
 set colorcolumn=+1
 
 " Searching
