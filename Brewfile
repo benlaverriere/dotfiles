@@ -39,6 +39,6 @@ cask "trailer"
 cask "unshaky"
 
 # add license to:
-cask "air-server"
+cask "airserver"
 cask "sublime-text"
 cask "vanilla"

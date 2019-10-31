@@ -4,6 +4,7 @@ autocmd!
 " Filetype/syntax
 filetype plugin indent on
 syntax on
+set omnifunc=syntaxcomplete#Complete
 
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.thor set filetype=ruby
