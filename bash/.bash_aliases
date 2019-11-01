@@ -1,3 +1,4 @@
+#!/bin/bash
 alias cat="bat"
 alias g="git"
 alias ll="ls -oAhG"
@@ -12,5 +13,7 @@ alias y="yarn"
 alias vi=/usr/local/bin/vim
 alias vim=/usr/local/bin/vim
 
-alias fastlane_=$(which fastlane)
+# we want this to expand now, not on execution
+# shellcheck disable=2139
+alias fastlane_="$(command -v fastlane)"
 alias fastlane='bundle exec fastlane'

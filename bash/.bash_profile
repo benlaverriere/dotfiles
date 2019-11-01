@@ -1,3 +1,4 @@
+#!/bin/bash
 export PATH=/usr/local/opt/qt5/bin:/usr/local/bin:~/bin:$PATH
 
 set -o ignoreeof
@@ -43,8 +44,9 @@ export LDFLAGS="-L/usr/local/opt/qt5/lib"
 
 # machine-specific addenda
 # arguably this shouldn't be a fixed path but...
-# shellcheck source=/dev/null
+# shellcheck source=./addenda/sample
 for f in ~/dotfiles/bash/addenda/*; do source "$f"; done
 
+# shellcheck disable=SC1090
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 if [ -e /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
