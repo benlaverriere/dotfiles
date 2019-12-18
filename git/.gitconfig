@@ -30,3 +30,5 @@
   default = current
 [credential]
 	helper = osxkeychain
+[format]
+	pretty = format:%C(auto)%h %Cgreen%<(15,trunc)%an %C(auto)%<(60,trunc)%s %d
