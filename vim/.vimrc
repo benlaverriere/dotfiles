@@ -1,5 +1,6 @@
 " remember: `:so[urce] ~/.vimrc` to reload, or `:so %` while editing
 autocmd!
+set nocompatible
 
 " Filetype/syntax
 filetype plugin indent on
@@ -10,6 +11,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
 au BufRead,BufNewFile Fastfile, Matchfile, Pluginfile set filetype=ruby
+
+" file browsing
+" notable kudos to https://www.youtube.com/watch?v=XA2WjJbmmoM
+set path+=**
+set wildmenu
 
 " General editing
 set backspace=indent,eol,start
