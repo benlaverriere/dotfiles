@@ -15,7 +15,8 @@ The Brewfile in this repository lists these packages.
 
 Finally, use `stow` to symlink the config directories in this repository to your home directory.
 
-    $ stow bash
+    $ stow zsh [and/or stow bash]
+    $ stow shared_shell
     $ stow git
     $ stow tmux
     $ stow vim

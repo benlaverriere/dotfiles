@@ -31,9 +31,9 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# shellcheck source=./bin/colors.sh
+# shellcheck source=../shared_shell/bin/colors.sh
 source colors.sh
-# shellcheck source=./bin/git-prompt.sh
+# shellcheck source=../shared_shell/bin/git-prompt.sh
 source git-prompt.sh
 
 export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\n➽  "
