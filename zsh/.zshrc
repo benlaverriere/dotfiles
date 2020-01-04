@@ -2,6 +2,7 @@ setopt AUTO_CD
 setopt CORRECT
 setopt CORRECT_ALL
 setopt NO_CASE_GLOB
+setopt GLOBDOTS
 
 if [ -f ~/.zsh_aliases ]; then
   # shellcheck source=./.zsh_aliases
@@ -35,3 +36,7 @@ PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")
 
 export EDITOR=/usr/local/bin/vim
 export PAGER="less -RF -+X"
+
+# machine-specific addenda
+# shellcheck source=./addenda/sample
+for f in ~/zsh_addenda/*; do source "$f"; done

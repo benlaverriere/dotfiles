@@ -43,9 +43,8 @@ export CPPFLAGS="-I/usr/local/opt/qt5/include"
 export LDFLAGS="-L/usr/local/opt/qt5/lib"
 
 # machine-specific addenda
-# arguably this shouldn't be a fixed path but...
-# shellcheck source=./addenda/sample
-for f in ~/dotfiles/bash/addenda/*; do source "$f"; done
+# shellcheck source=./bash_addenda/sample
+for f in ~/bash_addenda/*; do source "$f"; done
 
 # shellcheck disable=SC1090
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
