@@ -25,6 +25,8 @@ compinit
 # End of lines added by compinstall
 
 path+=~/bin
+path+=/usr/local/sbin # for Homebrew formulae
+path+=~/.rbenv/bin
 export PATH
 
 # shellcheck source=../bash/bin/git-prompt.sh
@@ -36,6 +38,14 @@ PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")
 
 export EDITOR=/usr/local/bin/vim
 export PAGER="less -RF -+X"
+
+# use Homebrew's OpenSSL 1.1 rather than the one installed by ruby-build, so that it gets upgraded
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+eval "$(rbenv init -)"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/benlaverriere/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # machine-specific addenda
 # shellcheck source=./addenda/sample

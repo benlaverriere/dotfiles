@@ -13,6 +13,8 @@ The Brewfile in this repository lists these packages.
 
     $ brew bundle --file=Brewfile
 
+Specify Homebrew's zsh per [these instructions](https://stackoverflow.com/a/17649823).
+
 Finally, use `stow` to symlink the config directories in this repository to your home directory.
 
     $ stow zsh [and/or stow bash]
