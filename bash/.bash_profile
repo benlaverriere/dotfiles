@@ -46,6 +46,4 @@ export LDFLAGS="-L/usr/local/opt/qt5/lib"
 # shellcheck source=./bash_addenda/sample
 for f in ~/bash_addenda/*; do source "$f"; done
 
-# shellcheck disable=SC1090
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 if [ -e /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
