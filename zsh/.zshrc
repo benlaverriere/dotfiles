@@ -1,4 +1,6 @@
 setopt AUTO_CD
+cdpath+=$HOME
+
 setopt CORRECT
 setopt CORRECT_ALL
 setopt NO_CASE_GLOB
