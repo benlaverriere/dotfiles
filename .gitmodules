@@ -10,3 +10,6 @@
 [submodule "vimtex"]
 	path = vim/.vim/pack/benlaverriere/start/vimtex
 	url = https://github.com/lervag/vimtex
+[submodule "vim/.vim/pack/benlaverriere/start/tabnine-vim"]
+	path = vim/.vim/pack/benlaverriere/start/tabnine-vim
+	url = https://github.com/zxqfl/tabnine-vim
