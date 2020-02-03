@@ -6,6 +6,10 @@ setopt CORRECT_ALL
 setopt NO_CASE_GLOB
 setopt GLOBDOTS
 
+# forward-delete
+bindkey "^[[3~"  delete-char
+bindkey "^[3;5~" delete-char
+
 if [ -f ~/.zsh_aliases ]; then
   # shellcheck source=./.zsh_aliases
   . ~/.zsh_aliases

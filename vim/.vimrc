@@ -10,7 +10,9 @@ set omnifunc=syntaxcomplete#Complete
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
-au BufRead,BufNewFile Fastfile, Matchfile, Pluginfile set filetype=ruby
+au BufRead,BufNewFile Fastfile set filetype=ruby
+au BufRead,BufNewFile Matchfile filetype=ruby
+au BufRead,BufNewFile Pluginfile set filetype=ruby
 
 " file browsing
 " notable kudos to https://www.youtube.com/watch?v=XA2WjJbmmoM
@@ -33,8 +35,9 @@ set numberwidth=5
 
 " Cursor position
 hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-autocmd InsertEnter,InsertLeave * set cursorline! cursorcolumn!
+set cursorline!
+"hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+"autocmd InsertEnter,InsertLeave * set cursorline! cursorcolumn!
 
 " Width/column
 set textwidth=120
