@@ -1,11 +1,10 @@
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
-[include]
-  # [user] values
-  path = ~/.gitconfig_local
+[alias]
+  # credit to https://haacked.com/archive/2014/07/28/github-flow-aliases/ for most of these
+  up = pull --rebase --autostash
+  cob = checkout --track origin/master -b
+  delete-merged = "!f() { git branch --merged ${1-master} | ag -v " ${1-master}$" | xargs git branch -d; }; f"
+  tidy = "!f() { git up && git checkout ${1-master} && git up && git delete-merged ${1-master}; }; f"
+  sup = status -vv
 [color]
   gui = true
   diff = auto
@@ -17,20 +16,23 @@
   editor = vim
   attributesfile = ~/.gitattributes
   pager = diff-so-fancy | less --tabs=4 -RF -+X
+[credential]
+	helper = osxkeychain
 [diff]
   submodule=log
-[alias]
-  # credit to https://haacked.com/archive/2014/07/28/github-flow-aliases/ for most of these
-  up = pull --rebase --autostash
-  cob = checkout --track origin/master -b
-  delete-merged = "!f() { git branch --merged ${1-master} | ag -v " ${1-master}$" | xargs git branch -d; }; f"
-  tidy = "!f() { git up && git checkout ${1-master} && git up && git delete-merged ${1-master}; }; f"
-  sup = status -vv
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[format]
+	pretty = format:%C(auto)%h %Cgreen%<(15,trunc)%an %C(auto)%<(60,trunc)%s %d
+[include]
+  # [user] values
+  path = ~/.gitconfig_local
 [pager]
   status = true
 [push]
   default = current
-[credential]
-	helper = osxkeychain
-[format]
-	pretty = format:%C(auto)%h %Cgreen%<(15,trunc)%an %C(auto)%<(60,trunc)%s %d
+[status]
+  submodulesummary = true
