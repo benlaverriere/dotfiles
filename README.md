@@ -34,3 +34,4 @@ Finally, use `stow` to symlink the config directories in this repository to your
 
 - add iTerm2 preferences
 - add JetBrains Mono
+- replace TeXShop with standalone TeXLive
