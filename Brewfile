@@ -26,6 +26,7 @@ brew "the_silver_searcher"
 brew "vim"
 brew "watch"
 brew "wget"
+brew "yoannmoinet/brews/notee"
 brew "zsh"
 
 cask "alfred"
