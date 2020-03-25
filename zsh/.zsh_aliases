@@ -11,6 +11,13 @@ alias weather='curl -s "wttr.in?format=%c%20%20%t%20%m"'
 alias ql='qlmanage -p $@ &> /dev/null'
 alias y="yarn"
 
+# TODO extract functions to their own file
+medit() {
+  touch $1
+  open -a Markoff $1
+  vim $1
+}
+
 # prefer Homebrewed vim over Apple default
 # (at the moment, mostly for `conceal` features)
 alias vi=/usr/local/bin/vim
