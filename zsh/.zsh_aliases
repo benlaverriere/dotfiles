@@ -18,6 +18,11 @@ medit() {
   vim $1
 }
 
+switch_java() {
+  export JAVA_HOME=`/usr/libexec/java_home -v $1`
+  java -version
+}
+
 # prefer Homebrewed vim over Apple default
 # (at the moment, mostly for `conceal` features)
 alias vi=/usr/local/bin/vim
