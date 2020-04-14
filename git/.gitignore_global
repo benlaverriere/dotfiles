@@ -1,5 +1,8 @@
+*.swp
 *.patch
 .classpath
 .project
+.idea/*
 *.settings/*
 *target/*
+TODO.todo
