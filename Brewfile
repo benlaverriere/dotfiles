@@ -31,7 +31,6 @@ brew "wget"
 brew "yoannmoinet/brews/notee"
 brew "zsh"
 
-cask "alfred"
 cask "flux"
 cask "google-chrome"
 cask "iterm2"
@@ -47,5 +46,6 @@ cask "unshaky"
 
 # add license to:
 cask "airserver"
+cask "alfred"
 cask "sublime-text"
 cask "vanilla"
