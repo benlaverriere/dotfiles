@@ -33,6 +33,7 @@ brew "wget"
 brew "yoannmoinet/brews/notee"
 brew "zsh"
 
+cask "breaktimer"
 cask "discord"
 cask "flux"
 cask "google-chrome"
