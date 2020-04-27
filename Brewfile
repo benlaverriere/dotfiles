@@ -31,6 +31,7 @@ brew "wget"
 brew "yoannmoinet/brews/notee"
 brew "zsh"
 
+cask "discord"
 cask "flux"
 cask "google-chrome"
 cask "iterm2"
