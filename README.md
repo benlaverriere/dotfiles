@@ -18,13 +18,13 @@ instructions](https://stackoverflow.com/a/17649823), with credit to [this answer
 
     $ ./script/switch_zsh.sh
 
-Finally, use `stow` to symlink the config directories in this repository to your home directory.
+Finally, use `stow` to symlink the config directories in this repository to your home directory:
 
-    $ stow zsh [and/or stow bash]
-    $ stow shared_shell
-    $ stow git
-    $ stow tmux
-    $ stow vim
+    $ ./script/stow_it_all.sh
+
+## Followup actions
+
+- FZF: `/usr/local/bin/fzf/install`
 
 ## resources
 

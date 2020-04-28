@@ -13,3 +13,6 @@
 [submodule "vim/.vim/pack/benlaverriere/start/tabnine-vim"]
 	path = vim/.vim/pack/benlaverriere/start/tabnine-vim
 	url = https://github.com/zxqfl/tabnine-vim
+[submodule "vim/.vim/pack/benlaverriere/start/fzf"]
+	path = vim/.vim/pack/benlaverriere/start/fzf
+	url = git@github.com:junegunn/fzf.vim.git

@@ -18,6 +18,7 @@ au BufRead,BufNewFile Pluginfile set filetype=ruby
 " notable kudos to https://www.youtube.com/watch?v=XA2WjJbmmoM
 set path+=**
 set wildmenu
+set rtp+=/usr/local/opt/fzf
 
 " General editing
 set backspace=indent,eol,start
