@@ -1,24 +1,27 @@
 " remember: `:so[urce] ~/.vimrc` to reload, or `:so %` while editing
 autocmd!
-set nocompatible
 
 " Filetype/syntax
 filetype plugin indent on
 syntax on
 set omnifunc=syntaxcomplete#Complete
 
-au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.thor set filetype=ruby
-au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
-au BufRead,BufNewFile Fastfile set filetype=ruby
-au BufRead,BufNewFile Matchfile filetype=ruby
-au BufRead,BufNewFile Pluginfile set filetype=ruby
+augroup FileTypes
+  autocmd!
+  au BufRead,BufNewFile *.md set filetype=markdown
+  au BufRead,BufNewFile *.thor set filetype=ruby
+  au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
+  au BufRead,BufNewFile Fastfile set filetype=ruby
+  au BufRead,BufNewFile Matchfile set filetype=ruby
+  au BufRead,BufNewFile Pluginfile set filetype=ruby
+augroup END
 
 " file browsing
 " notable kudos to https://www.youtube.com/watch?v=XA2WjJbmmoM
 set path+=**
 set wildmenu
 set rtp+=/usr/local/opt/fzf
+nnoremap <leader>f :Files<CR>
 
 " General editing
 set backspace=indent,eol,start
