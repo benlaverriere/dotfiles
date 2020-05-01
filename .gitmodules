@@ -16,3 +16,9 @@
 [submodule "vim/.vim/pack/benlaverriere/start/fzf"]
 	path = vim/.vim/pack/benlaverriere/start/fzf
 	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/.vim/pack/benlaverriere/start/gutentags"]
+	path = vim/.vim/pack/benlaverriere/start/gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "vim/.vim/pack/benlaverriere/start/kotlin-vim"]
+	path = vim/.vim/pack/benlaverriere/start/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim.git

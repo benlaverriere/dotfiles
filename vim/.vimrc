@@ -52,6 +52,7 @@ set ignorecase smartcase
 set hlsearch
 
 set laststatus=2
+set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)\ %{gutentags#statusline('[',']')}
 
 " options for vim-javascript
 let g:javascript_conceal_arrow_function       = "⇒"

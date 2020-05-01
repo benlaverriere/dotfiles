@@ -6,3 +6,8 @@
 *.settings/*
 *target/*
 TODO.todo
+
+# ctags / gutentags
+tags
+tags.lock
+tags.temp
