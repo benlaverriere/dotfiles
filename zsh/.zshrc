@@ -42,6 +42,11 @@ export PATH
 # shellcheck source=../bash/bin/git-prompt.sh
 source git-prompt.sh
 
+# set tab title to working dir
+precmd() {
+  echo -n "\e]1;${PWD##*/}\a"
+}
+
 setopt PROMPT_SUBST
 PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")%b
 %(!.%F{1}.)➽ %f"
