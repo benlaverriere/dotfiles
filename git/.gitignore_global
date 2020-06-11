@@ -11,3 +11,6 @@ TODO.todo
 tags
 tags.lock
 tags.temp
+
+# Ag
+.ignore

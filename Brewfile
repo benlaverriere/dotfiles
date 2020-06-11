@@ -31,6 +31,7 @@ brew "the_silver_searcher"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ['HEAD']
 brew "vim"
 brew "watch"
+brew "watson"
 brew "wget"
 brew "yoannmoinet/brews/notee"
 brew "zsh"
