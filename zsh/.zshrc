@@ -39,7 +39,7 @@ path+=/usr/local/sbin # for Homebrew formulae
 path+=~/.rbenv/bin
 export PATH
 
-# shellcheck source=../bash/bin/git-prompt.sh
+# shellcheck source=../shared_shell/bin/git-prompt.sh
 source git-prompt.sh
 
 # set tab title to working dir
@@ -47,9 +47,15 @@ precmd() {
   echo -n "\e]1;${PWD##*/}\a"
 }
 
+# TODO cache to speed up prompt rendering
+__watson_project () {
+  watson status -p | sed 's/No project started./∅/'
+}
+
 setopt PROMPT_SUBST
 PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")%b
 %(!.%F{1}.)➽ %f"
+RPROMPT="%F{magenta}〈\$(__watson_project)〉%b"
 
 export EDITOR=/usr/local/bin/vim
 export PAGER="less -RF -+X"
