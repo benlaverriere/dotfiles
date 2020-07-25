@@ -35,6 +35,7 @@ else
 fi
 
 path+=~/bin
+# TODO is this still needed? should we use `brew prefix` here?
 path+=/usr/local/sbin # for Homebrew formulae
 path+=~/.rbenv/bin
 export PATH

@@ -24,7 +24,7 @@ Finally, use `stow` to symlink the config directories in this repository to your
 
 ## Followup actions
 
-- FZF: `/usr/local/bin/fzf/install`
+- FZF: `$(brew --prefix)/opt/fzf/install`
 
 ## resources
 

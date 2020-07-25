@@ -1,4 +1,6 @@
 git/.gitconfig_local
 *_Brewfile
+Brewfile.lock.json
 bash/bash_addenda
+vim/.vim/.netrwhist
 zsh/zsh_addenda
