@@ -1,11 +1,11 @@
 *.swp
-*.patch
 .classpath
 .project
 .idea/*
 *.settings/*
 *target/*
 TODO.todo
+.DS_Store
 
 # ctags / gutentags
 tags

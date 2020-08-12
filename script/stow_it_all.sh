@@ -7,3 +7,4 @@ stow shared_shell
 stow git
 stow tmux
 stow vim
+stow iterm

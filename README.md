@@ -25,6 +25,7 @@ Finally, use `stow` to symlink the config directories in this repository to your
 ## Followup actions
 
 - FZF: `$(brew --prefix)/opt/fzf/install`
+- iTerm: `./script/iterm.sh`
 
 ## resources
 
