@@ -38,6 +38,7 @@ path+=~/bin
 # TODO is this still needed? should we use `brew prefix` here?
 path+=/usr/local/sbin # for Homebrew formulae
 path+=~/.rbenv/bin
+path+="$(python3 -m site --user-base)/bin"
 export PATH
 
 # shellcheck source=../shared_shell/bin/git-prompt.sh

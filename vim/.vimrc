@@ -59,6 +59,9 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_function             = "ƒ"
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
+" For vimtex (see :help vimtex-tex-flavor)
+let g:tex_flavor = 'latex'
+
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
