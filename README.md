@@ -2,6 +2,14 @@
 
 Ensure that `git` is installed locally.
 
+Create `~/.gitconfig_local` with contents like:
+
+```
+[user]
+  name = "Ben LaVerriere"
+  email = benlaverriere@example.com
+```
+
 [Install Homebrew](https://brew.sh/) so that we can install other software.
 
 Run `script/bootstrap.sh` to set everything up for the first time.
