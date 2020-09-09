@@ -22,3 +22,9 @@
 [submodule "vim/.vim/pack/benlaverriere/start/kotlin-vim"]
 	path = vim/.vim/pack/benlaverriere/start/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim.git
+[submodule "vim/.vim/pack/benlaverriere/start/surround"]
+	path = vim/.vim/pack/benlaverriere/start/surround
+	url = https://tpope.io/vim/surround.git
+[submodule "vim/.vim/pack/benlaverriere/start/repeat"]
+	path = vim/.vim/pack/benlaverriere/start/repeat
+	url = https://tpope.io/vim/repeat.git
