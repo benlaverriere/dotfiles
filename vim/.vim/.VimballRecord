@@ -1,0 +1,1 @@
+localvimrc.vmb: call delete('/Users/ben/.vim/doc/localvimrc.txt')|call delete('/Users/ben/.vim/plugin/localvimrc.vim')
