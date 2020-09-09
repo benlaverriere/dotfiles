@@ -18,6 +18,8 @@ Thereafter, run `script/beer_run.rb` to update things.
 ## resources
 
 - [Vim 8 native package management](https://shapeshed.com/vim-packages/)
+  - You probably want `g submodule add <git URL> vim/.vim/pack/benlaverriere/start/<name>`
+
 
 ## TODO
 
