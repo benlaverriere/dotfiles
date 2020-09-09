@@ -22,6 +22,3 @@
 [submodule "vim/.vim/pack/benlaverriere/start/kotlin-vim"]
 	path = vim/.vim/pack/benlaverriere/start/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim.git
-[submodule "vim/.vim/pack/benlaverriere/start/vim-projectlocal"]
-	path = vim/.vim/pack/benlaverriere/start/vim-projectlocal
-	url = git@github.com:krisajenkins/vim-projectlocal.git
