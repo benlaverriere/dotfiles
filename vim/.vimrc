@@ -1,10 +1,12 @@
 " remember: `:so[urce] ~/.vimrc` to reload, or `:so %` while editing
 autocmd!
 
-" Filetype/syntax
+" Basics
 filetype plugin indent on
 syntax on
 set omnifunc=syntaxcomplete#Complete
+inoremap jk <ESC>
+let mapleader = " "
 
 augroup FileTypes
   autocmd!
@@ -38,10 +40,8 @@ set relativenumber
 set numberwidth=5
 
 " Cursor position
-hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+hi CursorLine cterm=bold ctermfg=NONE
 set cursorline!
-"hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-"autocmd InsertEnter,InsertLeave * set cursorline! cursorcolumn!
 
 " Width/column
 set textwidth=120
@@ -54,12 +54,7 @@ set hlsearch
 set laststatus=2
 set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)\ %{gutentags#statusline('[',']')}
 
-" options for vim-javascript
-let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_function             = "ƒ"
-map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
-
-" For vimtex (see :help vimtex-tex-flavor)
+" vimtex needs this to be defined globally
 let g:tex_flavor = 'latex'
 
 " Load all plugins now.
@@ -68,6 +63,12 @@ packloadall
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
 silent! helptags ALL
+
+" Syntax highlighting requires Solarized, so after `packloadall`
+set background=dark
+colorscheme solarized
+
+let g:ale_fix_on_save = 1
 
 " Navigate between ALE errors quickly
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)

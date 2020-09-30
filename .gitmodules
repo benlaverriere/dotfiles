@@ -28,3 +28,6 @@
 [submodule "vim/.vim/pack/benlaverriere/start/repeat"]
 	path = vim/.vim/pack/benlaverriere/start/repeat
 	url = https://tpope.io/vim/repeat.git
+[submodule "vim/.vim/pack/benlaverriere/start/vim-colors-solarized"]
+	path = vim/.vim/pack/benlaverriere/start/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
