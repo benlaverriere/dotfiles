@@ -71,9 +71,18 @@ colorscheme solarized
 let g:ale_fix_on_save = 1
 
 " Navigate between ALE errors quickly
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " ALE color customizations
 highlight ALEWarning ctermbg=Green
 highlight ALEError ctermbg=Red
+
+" Things from Learn Vimscript the Hard Way
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+iabbrev kf Kingfisher
+iabbrev mj Mockingjay
+iabbrev zz zazu
+iabbrev bl benlaverriere
