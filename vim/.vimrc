@@ -86,3 +86,11 @@ iabbrev kf Kingfisher
 iabbrev mj Mockingjay
 iabbrev zz zazu
 iabbrev bl benlaverriere
+
+nnoremap H ^
+nnoremap L $
+
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
