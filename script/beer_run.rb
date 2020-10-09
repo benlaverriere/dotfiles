@@ -43,7 +43,7 @@ end
 
 advice = ['', '🍻 results 🍻']
 
-system 'git submodule update --remote --merge' if fix?
+system 'git submodule update --init --remote' if fix?
 system 'git submodule status' if check?
 
 return unless $target == :all
