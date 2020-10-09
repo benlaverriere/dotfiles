@@ -6,7 +6,7 @@ require 'open3'
 # and out of date casks. Also update vim plugin submodules for good measure.
 
 $mode = :check
-$target = :all
+$target = nil
 def check?
   $mode == :check
 end
@@ -27,7 +27,7 @@ end
 
 unless ARGV.nil?
   command = ARGV[0]
-  $target = ARGV[1].to_s
+  $target = ARGV[1]&.trim.to_s unless ARGV[1].nil?
   case command
   when 'fix', '--fix', 'f', '-f'
     $mode = :fix
@@ -35,6 +35,9 @@ unless ARGV.nil?
     $mode = :help
   end
 end
+
+puts $mode
+puts $target
 
 if help?
   puts 'Usage: beer_run.rb [help|check|fix] [vim]'
@@ -46,9 +49,10 @@ advice = ['', '🍻 results 🍻']
 system 'git submodule update --init --remote' if fix?
 system 'git submodule status' if check?
 
-return unless $target == :all
+return unless $target.nil?
 
-# we know homebrew is likely to update itself the first time we call it, so let's get that out of the way
+# we know homebrew is likely to update itself the first time we call it, so let's get that out of the way --- and even
+# in "check" mode, since we want the most updated list of packages
 if check?
   puts 'Updating homebrew...'
   homebrew 'update'
@@ -58,7 +62,7 @@ end
 # see if we've got everything installed we expect to
 if check?
   puts 'Checking Brewfile dependencies...'
-  up_to_date = system 'HOMEBREW_NO_AUTO_UPDATE=1 brew bundle check'
+  up_to_date = system 'HOMEBREW_NO_AUTO_UPDATE=1 brew bundle check --verbose'
   puts '...done!'
   unless up_to_date
     advice << 'Brewfile dependencies are out of date.'
@@ -89,7 +93,7 @@ end
 # what casks are outdated? and rejigger the format so we have one package per line like the formula output
 if check?
   puts 'Checking casks...'
-  updates_pending = homebrew 'cask outdated'
+  updates_pending = homebrew 'outdated --cask'
   puts '...done!'
   unless updates_pending.empty?
     advice << 'Homebrew casks are out of date.'
@@ -97,7 +101,7 @@ if check?
   end
 elsif fix?
   puts 'Upgrading Homebrew casks...'
-  homebrew 'cask upgrade'
+  homebrew 'upgrade --cask '
   puts '...done!'
 end
 
