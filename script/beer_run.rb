@@ -27,7 +27,7 @@ end
 
 unless ARGV.nil?
   command = ARGV[0]
-  $target = ARGV[1]&.trim.to_s unless ARGV[1].nil?
+  $target = ARGV[1]&.strip.to_s unless ARGV[1].nil?
   case command
   when 'fix', '--fix', 'f', '-f'
     $mode = :fix
