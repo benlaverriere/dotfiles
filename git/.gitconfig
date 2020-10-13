@@ -3,6 +3,7 @@
   up = pull --rebase --autostash
   cob = checkout --track origin/master -b
   delete-merged = "!f() { git branch --merged ${1-master} | ag -v " ${1-master}$" | xargs git branch -d; }; f"
+  home = switch master
   tidy = "!f() { git up && git checkout ${1-master} && git up && git delete-merged ${1-master}; }; f"
   sup = status -vv
 [color]
