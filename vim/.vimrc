@@ -71,8 +71,9 @@ colorscheme solarized
 let g:ale_fix_on_save = 1
 
 " Navigate between ALE errors quickly
-nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
-nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
+" TODO understand why nnoremap doesn't work for these
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " ALE color customizations
 highlight ALEWarning ctermbg=Green
