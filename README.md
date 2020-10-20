@@ -31,3 +31,4 @@ Thereafter, run `script/beer_run.rb` to update things.
 - QMK's config lives in `~/Library/Application Support/qmk/qmk.ini` --- `stow` it?
   - sample copy in root of this repo
 - `qmk configure` and `qmk flash`
+- Using a weekly build of Plover until 4.0 is released and casked
