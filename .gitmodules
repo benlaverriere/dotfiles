@@ -31,3 +31,6 @@
 [submodule "vim/.vim/pack/benlaverriere/start/vim-colors-solarized"]
 	path = vim/.vim/pack/benlaverriere/start/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "qmk/zsa_qmk_firmware"]
+	path = qmk/zsa_qmk_firmware
+	url = git@github.com:zsa/qmk_firmware.git
