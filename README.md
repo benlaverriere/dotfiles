@@ -24,3 +24,8 @@ Thereafter, run `script/beer_run.rb` to update things.
 ## TODO
 
 - replace TeXShop with standalone TeXLive
+
+## QMK
+
+- run `qmk setup benlaverriere/qmk_firmware` to get things ready
+- QMK's config lives in `~/Library/Application Support/qmk/qmk.ini` --- `stow` it?
