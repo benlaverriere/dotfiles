@@ -34,3 +34,4 @@
 [submodule "qmk/zsa_qmk_firmware"]
 	path = qmk/zsa_qmk_firmware
 	url = git@github.com:zsa/qmk_firmware.git
+  ignore = untracked
