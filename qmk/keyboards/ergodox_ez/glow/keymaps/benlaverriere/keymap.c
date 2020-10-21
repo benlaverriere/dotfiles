@@ -75,10 +75,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [LAYER_MEDIA] = LAYOUT_ergodox_pretty(
     ___,            ___,            ___,            ___,            ___,            ___,            ___,                                            ___,            ___,            ___,            ___,            ___,            ___,            ___,           
-    ___,            ___,            ___,            KC_MS_UP,       ___,            ___,            ___,                                            ___,            ___,            ___,            ___,            ___,            ___,            ___,           
-    ___,            ___,            KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    ___,                                                                            ___,            ___,            ___,            ___,            ___,            KC_MEDIA_PLAY_PAUSE,
+    ___,            ___,            ___,            ___,            ___,            ___,            ___,                                            ___,            ___,            ___,            ___,            ___,            ___,            ___,           
+    ___,            ___,            ___,            ___,            ___,            ___,                                                                            ___,            ___,            ___,            ___,            ___,            KC_MEDIA_PLAY_PAUSE,
     ___,            ___,            ___,            ___,            ___,            ___,            ___,                                            ___,            ___,            ___,            KC_MEDIA_PREV_TRACK,KC_MEDIA_NEXT_TRACK,___,            ___,           
-    ___,            ___,            ___,            KC_MS_BTN1,     KC_MS_BTN2,                                                                                                     KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  ___,            ___,           
+    ___,            ___,            ___,            ___,            ___,                                                                                                     KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  ___,            ___,           
                                                                                                     ___,            ___,            ___,            ___,           
                                                                                                                     ___,            ___,           
                                                                                     ___,            ___,            ___,            ___,            ___,            KC_WWW_BACK
