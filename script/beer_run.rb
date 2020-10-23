@@ -27,7 +27,7 @@ end
 
 unless ARGV.nil?
   command = ARGV[0]
-  $target = ARGV[1]&.strip.to_s unless ARGV[1].nil?
+  $target = ARGV[1]&.strip.to_sym unless ARGV[1].nil?
   case command
   when 'fix', '--fix', 'f', '-f'
     $mode = :fix
@@ -40,14 +40,26 @@ puts $mode
 puts $target
 
 if help?
-  puts 'Usage: beer_run.rb [help|check|fix] [vim]'
-  puts '(Specify "vim" to only update submodules.)'
+  puts 'Usage: beer_run.rb [help|check|fix] [git|vim]'
+  puts '(Specify "git" to only update submodules, and "vim" to only update ones that store Vim plugins.)'
 end
 
 advice = ['', '🍻 results 🍻']
 
-system 'git submodule update --init --remote' if fix?
-system 'git submodule status' if check?
+if check?
+  puts "checking"
+  system 'git submodule status'
+elsif fix?
+  puts "fixing"
+  if $target.nil?
+    system 'git submodule update --init --remote'
+  elsif $target == :vim
+    system 'git submodule update --init --remote -- vim' and return
+  elsif $target == :git
+    puts "yo"
+    system 'git submodule update --init --remote' and return
+  end
+end
 
 return unless $target.nil?
 
@@ -104,5 +116,7 @@ elsif fix?
   homebrew 'upgrade --cask '
   puts '...done!'
 end
+
+`qmk doctor` if check?
 
 puts advice if check? && advice.length > 2

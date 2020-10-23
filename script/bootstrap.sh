@@ -17,8 +17,6 @@ script/stow_it_all.sh
 
 ## Application/tool-specific followup actions
 
-# fzf
 "$(brew --prefix)/opt/fzf/install"
-
-# iTerm
 script/iterm.sh
+script/qmk.sh
