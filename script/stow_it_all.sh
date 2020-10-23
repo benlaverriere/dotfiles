@@ -8,3 +8,6 @@ stow git
 stow tmux
 stow vim
 stow iterm
+
+stow --dir ./qmk --target ./qmk/zsa_qmk_firmware/keyboards keyboards
+ln -f -s "$(pwd)/qmk/qmk.ini" "$HOME/Library/Application Support/qmk"

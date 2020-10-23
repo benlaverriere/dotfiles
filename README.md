@@ -24,3 +24,10 @@ Thereafter, run `script/beer_run.rb` to update things.
 ## TODO
 
 - replace TeXShop with standalone TeXLive
+- clean up options in `beer_run`
+- figure out distinction between `beer_run` and `stow_it_all` tasks, or combine
+
+## QMK
+
+- `qmk configure` and `qmk flash`
+- Using a weekly build of Plover until 4.0 is released and casked
