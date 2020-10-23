@@ -91,7 +91,5 @@ iabbrev bl benlaverriere
 nnoremap H ^
 nnoremap L $
 
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
