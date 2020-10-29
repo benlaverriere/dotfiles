@@ -4,7 +4,7 @@
 alias g="git"
 alias ll="ls -oAhG"
 alias w="watson"
-alias y="yarn"
+alias y="n yarn"
 
 alias cat="bat"
 alias mark="open -a Markoff $@"
