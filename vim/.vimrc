@@ -87,6 +87,8 @@ iabbrev kf Kingfisher
 iabbrev mj Mockingjay
 iabbrev zz zazu
 iabbrev bl benlaverriere
+iabbrev ae AudioEngine
+iabbrev lv LaVerriere
 
 nnoremap H ^
 nnoremap L $
