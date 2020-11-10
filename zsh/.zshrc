@@ -39,6 +39,7 @@ path+=~/bin
 path+=/usr/local/sbin # for Homebrew formulae
 path+=~/.rbenv/bin
 path+="$(python3 -m site --user-base)/bin"
+path+="/usr/local/opt/arm-gcc-bin@8/bin" # for QMK
 export PATH
 
 # shellcheck source=../shared_shell/bin/git-prompt.sh
