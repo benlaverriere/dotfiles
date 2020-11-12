@@ -40,7 +40,7 @@ set relativenumber
 set numberwidth=5
 
 " Cursor position
-hi CursorLine cterm=bold ctermfg=NONE
+hi CursorLine cterm=bold ctermfg=NONE ctermbg=5
 set cursorline!
 
 " Width/column
