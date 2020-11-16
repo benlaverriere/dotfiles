@@ -79,6 +79,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 highlight ALEWarning ctermbg=Green
 highlight ALEError ctermbg=Red
 
+nnoremap <leader>m :silent !open -a Markoff "%"<CR><C-L>
+
 " Things from Learn Vimscript the Hard Way
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>

@@ -143,7 +143,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm</string>
+	<string>~/dotfiles/iterm/iterm_profile</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -222,11 +222,11 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>-1204 887 937 464 -2560 470 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>840 0 834 1027 0 0 1680 1027 </string>
+	<string>3 5 1674 1016 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1680 -30 1920 1057 1680 -30 1920 1057 </string>
+	<string>-1920 489 650 538 -1920 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2477 73 650 538 1680 -402 1920 1057 </string>
+	<string>-1920 -30 1920 1057 -1920 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 489 650 538 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -452,6 +452,8 @@
 			<false/>
 			<key>Blur</key>
 			<false/>
+			<key>Blur Radius</key>
+			<real>16.630439006979696</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -854,6 +856,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>JetBrainsMono-Regular 13</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -900,6 +904,8 @@
 			<false/>
 			<key>Smart Cursor Color</key>
 			<false/>
+			<key>Space</key>
+			<integer>0</integer>
 			<key>Status Bar Layout</key>
 			<dict>
 				<key>advanced configuration</key>
@@ -1222,7 +1228,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{518, 823}</string>
+		<string>{250, 872}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1233,7 +1239,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>572976644.37135303</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>38</integer>
+	<integer>42</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2006,7 +2012,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/benlaverriere/dotfiles/iterm</string>
+	<string>/Users/benlaverriere/iterm_profile</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -2018,7 +2024,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-12T12:39:16Z</date>
+	<date>2020-11-08T14:13:00Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
