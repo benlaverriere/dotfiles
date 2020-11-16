@@ -35,6 +35,3 @@
 [submodule "vim/.vim/pack/benlaverriere/start/vim-javascript"]
 	path = vim/.vim/pack/benlaverriere/start/vim-javascript
 	url = git@github.com:pangloss/vim-javascript.git
-[submodule "vim/.vim/pack/benlaverriere/start/vim-commentary"]
-	path = vim/.vim/pack/benlaverriere/start/vim-commentary
-	url = git@github.com:tpope/vim-commentary.git
