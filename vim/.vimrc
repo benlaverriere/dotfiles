@@ -25,6 +25,10 @@ set wildmenu
 set rtp+=/usr/local/opt/fzf
 nnoremap <leader>f :Files<CR>
 
+" fzf's :Ag matches filenames by default.
+" from the author, via https://github.com/junegunn/fzf.vim/issues/346#issuecomment-288483704 :
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+
 " General editing
 set backspace=indent,eol,start
 set formatoptions=croqln
@@ -50,6 +54,7 @@ set colorcolumn=+1
 " Searching
 set ignorecase smartcase
 set hlsearch
+set incsearch
 
 set laststatus=2
 set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)\ %{gutentags#statusline('[',']')}
@@ -75,8 +80,8 @@ let g:ale_fix_on_save = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" ALE color customizations
-highlight ALEWarning ctermbg=Green
+" color customizations
+highlight Search gui=underline cterm=underline
 highlight ALEError ctermbg=Red
 
 " Things from Learn Vimscript the Hard Way
@@ -95,3 +100,6 @@ nnoremap L $
 
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+nnoremap <leader>a :Ag<cr>
+nnoremap <leader>h :nohlsearch<cr>
