@@ -87,7 +87,7 @@ namespace "check" do
   desc "Check whether QMK is installed and set up properly (interactive)"
   task :qmk do |task|
     log_task_start(task)
-    `qmk doctor`
+    system 'qmk doctor'
     log_task_end(task)
   end
 end
@@ -105,7 +105,7 @@ namespace "fix" do
   end
 
   desc "Ensure all the formulae installed on the system are up to date"
-  task formulae: %w[update_formulae] do |task|
+  task formulae: %w[update_homebrew] do |task|
     log_task_start(task)
     homebrew 'upgrade'
     log_task_end(task)
@@ -137,7 +137,7 @@ namespace "fix" do
   desc "Ensure QMK is installed and set up properly (interactive)"
   task :qmk do |task|
     log_task_start(task)
-    `qmk doctor`
+    system 'qmk doctor'
     log_task_end(task)
   end
 end
