@@ -13,7 +13,7 @@ Create `~/.gitconfig_local` with contents like:
 [Install Homebrew](https://brew.sh/) so that we can install other software.
 
 Run `script/bootstrap.sh` to set everything up for the first time.
-Thereafter, run `script/beer_run.rb` to update things.
+Thereafter, run `[bundle exec] rake fix` to update things.
 
 ## resources
 
@@ -24,8 +24,7 @@ Thereafter, run `script/beer_run.rb` to update things.
 ## TODO
 
 - replace TeXShop with standalone TeXLive
-- clean up options in `beer_run`
-- figure out distinction between `beer_run` and `stow_it_all` tasks, or combine
+- figure out distinction between Rake and `stow_it_all` tasks, or combine
 
 ## QMK
 

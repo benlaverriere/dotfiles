@@ -50,12 +50,12 @@ namespace "check" do
   end
 
   desc "Check that all the formulae installed on the system are up to date"
-  task formulae: [:updaet_homebrew] do |task|
+  task formulae: [:update_homebrew] do |task|
     log_task_start(task)
     updates_pending = homebrew 'outdated'
     unless updates_pending.empty?
       advice << 'Homebrew-installed formulae outside the Brewfile are out of date.'
-      advice << '  Fix all with `beer_run fix`, or individually with `brew upgrade <formula>`.'
+      advice << '  Fix all with `fix:formulae`, or individually with `brew upgrade <formula>`.'
     end
   end
 
