@@ -37,10 +37,12 @@ fi
 path+=~/bin
 # TODO is this still needed? should we use `brew prefix` here?
 path+=/usr/local/sbin # for Homebrew formulae
-path+=~/.rbenv/bin
 path+="$(python3 -m site --user-base)/bin"
 path+="/usr/local/opt/arm-gcc-bin@8/bin" # for QMK
 export PATH
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+chruby ruby
 
 # shellcheck source=../shared_shell/bin/git-prompt.sh
 source git-prompt.sh
@@ -66,8 +68,6 @@ export PAGER="less -RF -+X"
 # use Homebrew's OpenSSL 1.1 rather than the one installed by ruby-build, so that it gets upgraded
 # $(brew --prefix openssl@1.1) gives this value, but brew is slow, so we'll hardcode for now
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
-
-eval "$(rbenv init -)"
 
 # heroku autocomplete setup, modified to use `~` rather than an explicit username
 HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
