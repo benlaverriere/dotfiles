@@ -1,21 +1,21 @@
 task default: %w[help]
 
-desc "Display usage information"
+desc 'Display usage information'
 task :help do
-  puts "Top-level tasks:"
-  puts "  - help: display this message"
-  puts "  - check: check all modules for updates, but do not apply any changes"
-  puts "  - fix: apply updates to all modules"
-  puts "Modules: "
+  puts 'Top-level tasks:'
+  puts '  - help: display this message'
+  puts '  - check: check all modules for updates, but do not apply any changes'
+  puts '  - fix: apply updates to all modules'
+  puts 'Modules: '
   puts %w[brewfile cask formulae homebrew git vim qmk].map { |target| "  - #{target}" }.join("\n")
 end
 
 advice = ['', '🍻 results 🍻']
 
-desc "Check all modules for updates, but do not apply any changes"
+desc 'Check all modules for updates, but do not apply any changes'
 task check: %w[check:all]
 
-desc "Apply updates to all modules"
+desc 'Apply updates to all modules'
 task fix: %w[fix:all]
 
 def log_task_start(task)
@@ -32,8 +32,8 @@ def homebrew(arg_string)
   result
 end
 
-namespace "check" do
-  task all: %w[check:brewfile check:cask check:formulae check:git check:vim check:qmk] do |task|
+namespace 'check' do
+  task all: %w[check:brewfile check:cask check:formulae check:git check:vim check:qmk] do |_task|
     puts advice if advice.length > 2
   end
 
@@ -49,7 +49,7 @@ namespace "check" do
     log_task_end(task)
   end
 
-  desc "Check that all the formulae installed on the system are up to date"
+  desc 'Check that all the formulae installed on the system are up to date'
   task formulae: [:update_homebrew] do |task|
     log_task_start(task)
     updates_pending = homebrew 'outdated'
@@ -59,7 +59,7 @@ namespace "check" do
     end
   end
 
-  desc "Check that all the casks installed on the system are up to date"
+  desc 'Check that all the casks installed on the system are up to date'
   task cask: [:update_homebrew] do |task|
     log_task_start(task)
     updates_pending = homebrew 'outdated --cask'
@@ -70,21 +70,21 @@ namespace "check" do
     log_task_end(task)
   end
 
-  desc "Check that all submodules of this repo are up to date"
+  desc 'Check that all submodules of this repo are up to date'
   task git: %w[check:vim] do |task|
     log_task_start(task)
     system 'git submodule status -- . ":(exclude)vim"'
     log_task_end(task)
   end
 
-  desc "Check that all vim-plugin submodules of this repo are up to date"
+  desc 'Check that all vim-plugin submodules of this repo are up to date'
   task :vim do |task|
     log_task_start(task)
     system 'git submodule status -- vim'
     log_task_end(task)
   end
 
-  desc "Check whether QMK is installed and set up properly (interactive)"
+  desc 'Check whether QMK is installed and set up properly (interactive)'
   task :qmk do |task|
     log_task_start(task)
     system 'qmk doctor'
@@ -92,8 +92,8 @@ namespace "check" do
   end
 end
 
-namespace "fix" do
-  task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |task|
+namespace 'fix' do
+  task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |_task|
     puts advice if advice.length > 2
   end
 
@@ -104,28 +104,28 @@ namespace "fix" do
     log_task_end(task)
   end
 
-  desc "Ensure all the formulae installed on the system are up to date"
+  desc 'Ensure all the formulae installed on the system are up to date'
   task formulae: %w[update_homebrew] do |task|
     log_task_start(task)
     homebrew 'upgrade'
     log_task_end(task)
   end
 
-  desc "Ensure all the casks installed on the system are up to date"
+  desc 'Ensure all the casks installed on the system are up to date'
   task cask: %w[update_homebrew] do |task|
     log_task_start(task)
     homebrew 'upgrade --cask '
     log_task_end(task)
   end
 
-  desc "Ensure all submodules of this repo are up to date"
+  desc 'Ensure all submodules of this repo are up to date'
   task git: %w[fix:vim] do |task|
     log_task_start(task)
     system 'git submodule update --init --remote -- . ":(exclude)vim"'
     log_task_end(task)
   end
 
-  desc "Ensure all vim-plugin submodules of this repo are up to date"
+  desc 'Ensure all vim-plugin submodules of this repo are up to date'
   task :vim do |task|
     log_task_start(task)
     system 'git submodule update --init --remote -- vim'
@@ -134,7 +134,7 @@ namespace "fix" do
 
   task homebrew: [:update_homebrew]
 
-  desc "Ensure QMK is installed and set up properly (interactive)"
+  desc 'Ensure QMK is installed and set up properly (interactive)'
   task :qmk do |task|
     log_task_start(task)
     system 'qmk doctor'

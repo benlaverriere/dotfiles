@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'qmk/zsa_qmk_firmware/**/*'
+    - 'vim/.vim/pack/**/*'
+  NewCops: enable
+Style/FrozenStringLiteralComment:
+  Enabled: false
