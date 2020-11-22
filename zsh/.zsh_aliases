@@ -7,6 +7,7 @@ alias w="watson"
 alias y="n yarn"
 
 alias cat="bat"
+alias be="bundle exec"
 alias mark="open -a Markoff $@"
 alias now='date +"%A %d %B %H:%M"'
 alias ql='qlmanage -p $@ &> /dev/null'
@@ -29,8 +30,8 @@ switch_java() {
 
 # prefer Homebrewed vim over Apple default
 # (at the moment, mostly for `conceal` features)
-alias vi=/usr/local/bin/vim
-alias vim=/usr/local/bin/vim
+alias vi=$(brew --prefix)/bin/vim
+alias vim=$(brew --prefix)/bin/vim
 
 # we want this to expand now, not on execution
 # shellcheck disable=2139

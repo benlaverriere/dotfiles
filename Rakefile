@@ -57,6 +57,7 @@ namespace 'check' do
       advice << 'Homebrew-installed formulae outside the Brewfile are out of date.'
       advice << '  Fix all with `fix:formulae`, or individually with `brew upgrade <formula>`.'
     end
+    log_task_end(task)
   end
 
   desc 'Check that all the casks installed on the system are up to date'
@@ -144,6 +145,6 @@ end
 
 task :update_homebrew do |task|
   log_task_start(task)
-  homebrew 'update'
+  homebrew 'update --quiet'
   log_task_end(task)
 end
