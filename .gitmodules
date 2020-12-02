@@ -38,3 +38,6 @@
 [submodule "vim/.vim/pack/benlaverriere/start/vim-commentary"]
 	path = vim/.vim/pack/benlaverriere/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "vim/.vim/pack/benlaverriere/start/graphql"]
+	path = vim/.vim/pack/benlaverriere/start/graphql
+	url = https://github.com/jparise/vim-graphql.git
