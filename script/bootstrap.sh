@@ -2,15 +2,8 @@
 
 # See README for this script's prerequisites
 
-# Set up a Ruby installation that's entirely within our control, inspired by
-# https://github.com/monfresh/install-ruby-on-macos
-ruby-install ruby
-chruby ruby
-gem update --system
-gem install bundler && gem update bundler
-number_of_cores=$(sysctl -n hw.ncpu)
-bundle config --global jobs $((number_of_cores - 1))
-bundle install
+# Set up a Ruby installation that's entirely within our control:
+script/ruby.sh
 
 # Then install everything else:
 bundle exec rake fix
