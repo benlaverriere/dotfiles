@@ -94,6 +94,7 @@ iabbrev zz zazu
 iabbrev bl benlaverriere
 iabbrev ae AudioEngine
 iabbrev lv LaVerriere
+iabbrev rn React Native
 
 nnoremap H ^
 nnoremap L $
