@@ -74,14 +74,18 @@ namespace 'check' do
   desc 'Check that all submodules of this repo are up to date'
   task git: %w[check:vim] do |task|
     log_task_start(task)
-    system 'git submodule status -- . ":(exclude)vim"'
+
+    # exclude lines that don't start with either + or - (representing a change)
+    system 'git submodule status -- . ":(exclude)vim" | ag -v "^ "'
     log_task_end(task)
   end
 
   desc 'Check that all vim-plugin submodules of this repo are up to date'
   task :vim do |task|
     log_task_start(task)
-    system 'git submodule status -- vim'
+
+    # exclude lines that don't start with either + or - (representing a change)
+    system 'git submodule status -- vim | ag -v "^ "'
     log_task_end(task)
   end
 
