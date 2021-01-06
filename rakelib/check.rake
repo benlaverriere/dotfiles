@@ -1,22 +1,21 @@
 require_relative '../rake_helpers'
 
 initial_advice = ['', '🍻 results 🍻']
-advice = initial_advice
+*advice = *initial_advice
 
 desc 'Check all modules for updates, but do not apply any changes'
 task check: %w[check:all]
 
 namespace 'check' do
   task all: %w[check:brewfile check:cask check:formulae check:git check:vim check:qmk] do |_task|
-    puts advice if advice.length > initial_advice.length
+    puts(advice) if advice.length > initial_advice.length
   end
 
   desc "Check that all the formulae specified in this repo's Brewfile are installed and up to date"
   task brewfile: [:update_homebrew] do |task|
     log_task_start(task)
     results = homebrew 'bundle check --verbose'
-    up_to_date = results[:exit_code]
-    unless up_to_date
+    unless results[:exit_code].zero?
       advice << 'Brewfile dependencies are out of date.'
       advice << '  Fix all with `fix:brewfile`, or individually with `brew bundle [install]`.'
     end
