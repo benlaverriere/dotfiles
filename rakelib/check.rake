@@ -8,7 +8,11 @@ task check: %w[check:all]
 
 namespace 'check' do
   task all: %w[check:brewfile check:cask check:formulae check:git check:vim check:qmk] do |_task|
-    puts(advice) if advice.length > initial_advice.length
+    if advice.length > initial_advice.length
+      puts(advice)
+    else
+      puts '🍻 everything looks good! 🍻'
+    end
   end
 
   desc "Check that all the formulae specified in this repo's Brewfile are installed and up to date"
@@ -26,7 +30,7 @@ namespace 'check' do
   task formulae: [:update_homebrew] do |task|
     log_task_start(task)
     updates_pending = homebrew 'outdated'
-    unless updates_pending.empty?
+    unless updates_pending[:output].empty?
       advice << 'Homebrew-installed formulae outside the Brewfile are out of date.'
       advice << '  Fix all with `fix:formulae`, or individually with `brew upgrade <formula>`.'
     end
@@ -37,7 +41,7 @@ namespace 'check' do
   task cask: [:update_homebrew] do |task|
     log_task_start(task)
     updates_pending = homebrew 'outdated --cask'
-    unless updates_pending.empty?
+    unless updates_pending[:output].empty?
       advice << 'Homebrew casks are out of date.'
       advice << '  Fix all with `fix:cask`, or individually with `brew cask upgrade <formula>`.'
     end

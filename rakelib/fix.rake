@@ -5,27 +5,27 @@ task fix: %w[fix:all]
 
 namespace 'fix' do
   task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |_task|
-    puts advice if advice.length > 2
+    puts '🍻 done! 🍻'
   end
 
   desc "Ensure all the formulae specified in this repo's Brewfile are installed and up to date"
   task brewfile: %w[update_homebrew] do |task|
     log_task_start(task)
-    homebrew 'bundle install'
+    homebrew('bundle install --quiet', exclude_lines_like: /^Using /)
     log_task_end(task)
   end
 
   desc 'Ensure all the formulae installed on the system are up to date'
   task formulae: %w[update_homebrew] do |task|
     log_task_start(task)
-    homebrew 'upgrade'
+    homebrew 'upgrade --quiet'
     log_task_end(task)
   end
 
   desc 'Ensure all the casks installed on the system are up to date'
   task cask: %w[update_homebrew] do |task|
     log_task_start(task)
-    homebrew 'upgrade --cask'
+    homebrew 'upgrade --cask --quiet'
     log_task_end(task)
   end
 
@@ -50,7 +50,8 @@ namespace 'fix' do
     log_task_start(task)
 
     # -y: attempt to fix any problems automatically, don't prompt interactively
-    RakeHelpers.system_with_passthrough 'qmk doctor -y'
+    # Ψ: QMK prefixes info-level log lines with this
+    results = RakeHelpers.system_with_passthrough('qmk doctor -y', exclude_lines_like: /Ψ/)
     log_task_end(task)
   end
 end
