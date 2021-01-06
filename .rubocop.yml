@@ -3,5 +3,8 @@ AllCops:
     - 'qmk/zsa_qmk_firmware/**/*'
     - 'vim/.vim/pack/**/*'
   NewCops: enable
+
 Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/AsciiComments:
   Enabled: false
