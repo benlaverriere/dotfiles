@@ -12,7 +12,7 @@ task :help do
   puts %w[brewfile cask formulae homebrew git vim qmk].map { |target| "  - #{target}" }.join("\n")
 end
 
-task :update_homebrew do |task|
+task :update_homebrew do |task| # rubocop:disable Rake/Desc
   log_task_start(task)
   homebrew('update --quiet', exclude_lines_like: /Already up-to-date./)
   log_task_end(task)

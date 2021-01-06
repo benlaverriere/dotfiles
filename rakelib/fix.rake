@@ -4,7 +4,7 @@ desc 'Apply updates to all modules'
 task fix: %w[fix:all]
 
 namespace 'fix' do
-  task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |_task|
+  task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |_task| # rubocop:disable Rake/Desc
     puts '🍻 done! 🍻'
   end
 
@@ -43,6 +43,7 @@ namespace 'fix' do
     log_task_end(task)
   end
 
+  desc 'Ensure Homebrew is up to date'
   task homebrew: [:update_homebrew]
 
   desc 'Ensure QMK is installed and set up properly'
@@ -51,7 +52,7 @@ namespace 'fix' do
 
     # -y: attempt to fix any problems automatically, don't prompt interactively
     # Ψ: QMK prefixes info-level log lines with this
-    results = RakeHelpers.system_with_passthrough('qmk doctor -y', exclude_lines_like: /Ψ/)
+    RakeHelpers.system_with_passthrough('qmk doctor -y', exclude_lines_like: /Ψ/)
     log_task_end(task)
   end
 end
