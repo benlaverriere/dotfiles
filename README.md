@@ -18,13 +18,13 @@ Thereafter, run `[bundle exec] rake fix` to update things.
 ## resources
 
 - [Vim 8 native package management](https://shapeshed.com/vim-packages/)
-  - You probably want `g submodule add <git URL> vim/.vim/pack/benlaverriere/start/<name>`
+  - You probably want `script/add_vim_plugin.rb <url> [submodule_alias]`
 
 
 ## TODO
 
-- replace TeXShop with standalone TeXLive
 - figure out distinction between Rake and `stow_it_all` tasks, or combine
+- replace TeXShop with standalone TeXLive
 
 ## QMK
 
