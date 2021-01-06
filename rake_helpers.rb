@@ -17,9 +17,6 @@ module RakeHelpers
       end
       exit_code = thread.value
     end
-    {
-      output: results,
-      exit_code: exit_code.exitstatus
-    }
+    { output: results, exit_code: exit_code.exitstatus }
   end
 end
