@@ -41,3 +41,9 @@
 [submodule "vim/.vim/pack/benlaverriere/start/graphql"]
 	path = vim/.vim/pack/benlaverriere/start/graphql
 	url = https://github.com/jparise/vim-graphql.git
+[submodule "vim/.vim/pack/benlaverriere/start/goyo"]
+	path = vim/.vim/pack/benlaverriere/start/goyo
+	url = https://github.com/junegunn/goyo.vim
+[submodule "vim/.vim/pack/benlaverriere/start/limelight"]
+	path = vim/.vim/pack/benlaverriere/start/limelight
+	url = https://github.com/junegunn/limelight.vim

@@ -85,6 +85,13 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 highlight Search gui=underline cterm=underline
 highlight ALEError ctermbg=Red
 
+" limelight + goyo = focused text editing
+let g:limelight_conceal_ctermfg=10
+augroup Limelight
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
+augroup END
+
 " Things from Learn Vimscript the Hard Way
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
