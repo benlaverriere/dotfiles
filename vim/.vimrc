@@ -112,3 +112,5 @@ noremap <Right> <nop>
 
 nnoremap <leader>a :Ag<cr>
 nnoremap <leader>h :nohlsearch<cr>
+" find git merge conflicts
+nnoremap <leader>m /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
