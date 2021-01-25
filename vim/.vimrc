@@ -1,4 +1,3 @@
-" remember: `:so[urce] ~/.vimrc` to reload, or `:so %` while editing
 autocmd!
 
 " Basics
@@ -38,6 +37,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set shiftround
+
+" Wrap (vim defaults this on, but just to be explicit) and do so at word boundaries
+set wrap linebreak
 
 " Line numbers
 set number
@@ -86,6 +88,8 @@ highlight Search gui=underline cterm=underline
 highlight ALEError ctermbg=Red
 
 " limelight + goyo = focused text editing
+nnoremap <leader>gy :Goyo<cr>
+let g:goyo_width=120
 let g:limelight_conceal_ctermfg=10
 augroup Limelight
   autocmd! User GoyoEnter Limelight
@@ -110,7 +114,14 @@ nnoremap L $
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+" Searches:
+" - g for "grep", whatever's currently my preference (while adjusting to rg)
+" - a for ag specifically
+" - r for rg specifically
+nnoremap <leader>g :Rg<cr>
 nnoremap <leader>a :Ag<cr>
+nnoremap <leader>r :Rg<cr>
+
 nnoremap <leader>h :nohlsearch<cr>
 " find git merge conflicts
 nnoremap <leader>m /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
