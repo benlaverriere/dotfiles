@@ -76,6 +76,7 @@ HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && test 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # machine-specific addenda
 # shellcheck source=./addenda/sample
