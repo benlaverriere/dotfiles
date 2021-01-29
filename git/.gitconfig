@@ -17,11 +17,25 @@
   excludesfile = ~/.gitignore_global
   editor = vim
   attributesfile = ~/.gitattributes
-  pager = diff-so-fancy | less --tabs=4 -RF -+X
+  pager = delta
 [credential]
 	helper = osxkeychain
+[delta]
+  features = side-by-side line-numbers decorations
+  syntax-theme = Solarized (Dark)
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul
+[delta "line-numbers"]
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28
 [diff]
   submodule=log
+  colorMoved = default
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
