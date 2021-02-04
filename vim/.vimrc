@@ -86,10 +86,11 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " color customizations
 highlight Search gui=underline cterm=underline
 highlight ALEError ctermbg=Red
+highlight Comment cterm=italic
 
 " limelight + goyo = focused text editing
 nnoremap <leader>gy :Goyo<cr>
-let g:goyo_width=120
+let g:goyo_width=130
 let g:limelight_conceal_ctermfg=10
 augroup Limelight
   autocmd! User GoyoEnter Limelight

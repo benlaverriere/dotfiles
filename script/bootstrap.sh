@@ -22,3 +22,4 @@ script/stow_it_all.sh
 script/iterm.sh
 script/qmk.sh
 script/kokoi.sh
+script/terminfo.sh
