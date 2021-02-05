@@ -47,3 +47,6 @@
 [submodule "vim/.vim/pack/benlaverriere/start/limelight"]
 	path = vim/.vim/pack/benlaverriere/start/limelight
 	url = https://github.com/junegunn/limelight.vim
+[submodule "vim/.vim/pack/benlaverriere/start/fugitive.git"]
+	path = vim/.vim/pack/benlaverriere/start/fugitive.git
+	url = https://tpope.io/vim/fugitive.git
