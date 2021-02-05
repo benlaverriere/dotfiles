@@ -3,7 +3,10 @@
 require 'active_support/core_ext/object/blank'
 require 'uri'
 
-puts 'Usage: add_vim_plugin <URL> [submodule name]' if ARGV.empty?
+if ARGV.length < 1 || ARGV.length > 3
+  puts 'Usage: add_vim_plugin <URL> [submodule name]'
+  return
+end
 
 url = URI(ARGV[0])
 submodule_name = ARGV[1]&.presence || url.path.split('/').last
