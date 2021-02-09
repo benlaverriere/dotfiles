@@ -50,3 +50,6 @@
 [submodule "vim/.vim/pack/benlaverriere/start/fugitive.git"]
 	path = vim/.vim/pack/benlaverriere/start/fugitive.git
 	url = https://tpope.io/vim/fugitive.git
+[submodule "vim/.vim/pack/benlaverriere/start/quick-scope.git"]
+	path = vim/.vim/pack/benlaverriere/start/quick-scope.git
+	url = https://github.com/unblevable/quick-scope.git

@@ -81,3 +81,4 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # machine-specific addenda
 # shellcheck source=./addenda/sample
 for f in ~/zsh_addenda/*; do source "$f"; done
+if [ -e /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
