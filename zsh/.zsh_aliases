@@ -7,7 +7,6 @@ alias w="watson"
 alias y="n yarn"
 
 alias cat="bat"
-alias be="bundle exec"
 alias mark="open -a Markoff $@"
 alias now='date +"%A %d %B %H:%M"'
 alias ql='qlmanage -p $@ &> /dev/null'
@@ -26,6 +25,15 @@ medit() {
 switch_java() {
   export JAVA_HOME=`/usr/libexec/java_home -v $1`
   java -version
+}
+
+be() {
+  remaining_args="${@[1,-1]}"
+  if [[ ! -z $remaining_args ]]; then
+    bundle exec $remaining_args
+  else
+    bundle install
+  fi
 }
 
 # prefer Homebrewed vim over Apple default
