@@ -52,3 +52,5 @@
   default = current
 [status]
   submodulesummary = true
+[init]
+	defaultBranch = main
