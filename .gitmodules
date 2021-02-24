@@ -53,3 +53,6 @@
 [submodule "quick-scope"]
 	path = vim/.vim/pack/benlaverriere/start/quick-scope.git
 	url = https://github.com/unblevable/quick-scope.git
+[submodule "rust"]
+	path = vim/.vim/pack/benlaverriere/start/rust
+	url = https://github.com/rust-lang/rust.vim
