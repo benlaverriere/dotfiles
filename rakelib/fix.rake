@@ -32,14 +32,14 @@ namespace 'fix' do
   desc 'Ensure all submodules of this repo are up to date'
   task git: %w[fix:vim] do |task|
     log_task_start(task)
-    RakeHelpers.system_with_passthrough 'git submodule update --init --remote -- . ":(exclude)vim"'
+    RakeHelpers.system_with_passthrough 'git submodule update --init -- . ":(exclude)vim"'
     log_task_end(task)
   end
 
   desc 'Ensure all vim-plugin submodules of this repo are up to date'
   task :vim do |task|
     log_task_start(task)
-    RakeHelpers.system_with_passthrough 'git submodule update --init --remote -- vim'
+    RakeHelpers.system_with_passthrough 'git submodule update --init -- vim'
     log_task_end(task)
   end
 
