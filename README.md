@@ -25,6 +25,7 @@ Thereafter, run `[bundle exec] rake fix` to update things.
 
 - figure out distinction between Rake and `stow_it_all` tasks, or combine
 - replace TeXShop with standalone TeXLive
+- split Brewfile into "critical" and "everything else"
 
 ## QMK
 

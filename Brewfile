@@ -9,6 +9,7 @@ tap 'qmk/qmk'
 
 brew 'bat'
 brew 'black'
+brew 'blueutil'
 brew 'chruby'
 brew 'diff-so-fancy'
 brew 'entr'
