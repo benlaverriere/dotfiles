@@ -56,3 +56,6 @@
 [submodule "rust"]
 	path = vim/.vim/pack/benlaverriere/start/rust
 	url = https://github.com/rust-lang/rust.vim
+[submodule "vim-rhubarb"]
+	path = vim/.vim/pack/benlaverriere/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
