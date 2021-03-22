@@ -108,6 +108,7 @@ iabbrev bl benlaverriere
 iabbrev ae AudioEngine
 iabbrev lv LaVerriere
 iabbrev rn React Native
+iabbrev cv question
 
 nnoremap H ^
 nnoremap L $
