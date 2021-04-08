@@ -1,10 +1,10 @@
 [alias]
   # credit to https://haacked.com/archive/2014/07/28/github-flow-aliases/ for most of these
   up = pull --rebase --autostash
-  cob = checkout --track origin/master -b
-  delete-merged = "!f() { git branch --merged ${1-master} | ag -v " ${1-master}$" | xargs git branch -d; }; f"
-  home = switch master
-  tidy = "!f() { git up && git checkout ${1-master} && git up && git delete-merged ${1-master}; }; f"
+  cob = checkout --track origin/main -b
+  delete-merged = "!f() { git branch --merged ${1-main} | ag -v " ${1-main}$" | xargs git branch -d; }; f"
+  home = switch main
+  tidy = "!f() { git up && git checkout ${1-main} && git up && git delete-merged ${1-main}; }; f"
   sup = status -vv
   which = "!f() { git config --get alias.${1}; }; f"
 [color]
