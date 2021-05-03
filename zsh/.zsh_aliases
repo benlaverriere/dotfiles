@@ -47,6 +47,9 @@ alias fastlane_="$(command -v fastlane)"
 # wrap with notee to get a notification on completion
 alias fastlane='n bundle exec fastlane'
 
+alias pod_="$(command -v pod)"
+alias pod='n bundle exec pod'
+
 alias watson-daily-report='watson report -d --csv | perl -pe "s/(.+59,[^,]+?,)(.*?),(\d+.*)/\3,\1\"\2\"/" | sort -n -r'
 
 alias booted-simulator-name="xcrun simctl list devices booted -j | jq -j '.devices[] | select(length > 0) | map_values(.name)[0]'"
