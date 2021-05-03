@@ -7,9 +7,6 @@
 [submodule "vimtex"]
 	path = vim/.vim/pack/benlaverriere/start/vimtex
 	url = https://github.com/lervag/vimtex
-[submodule "tabnine-vim"]
-	path = vim/.vim/pack/benlaverriere/start/tabnine-vim
-	url = https://github.com/zxqfl/tabnine-vim
 [submodule "fzf"]
 	path = vim/.vim/pack/benlaverriere/start/fzf
 	url = git@github.com:junegunn/fzf.vim.git
