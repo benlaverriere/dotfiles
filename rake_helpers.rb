@@ -19,4 +19,12 @@ module RakeHelpers
     end
     { output: results, exit_code: exit_code.exitstatus }
   end
+
+  # Ψ: QMK prefixes info-level log lines with this
+  # no .git folder: because it's checked out as a submodule, `.git` is a file rather than a directory. (see
+  # https://git-scm.com/docs/gitrepository-layout for details on this.) As a result, the checkout fails QMK's
+  # rudimentary sanity-check.
+  def self.qmk_exclude_lines_like
+    /(Ψ|QMK home does not appear to be a Git repository! \(no .git folder\))/
+  end
 end

@@ -51,8 +51,8 @@ namespace 'fix' do
     log_task_start(task)
 
     # -y: attempt to fix any problems automatically, don't prompt interactively
-    # Ψ: QMK prefixes info-level log lines with this
-    RakeHelpers.system_with_passthrough('qmk doctor -y', exclude_lines_like: /Ψ/)
+    RakeHelpers.system_with_passthrough('qmk doctor -y',
+                                        exclude_lines_like: RakeHelpers.qmk_exclude_lines_like)
     log_task_end(task)
   end
 end

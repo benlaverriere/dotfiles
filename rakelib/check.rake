@@ -82,8 +82,8 @@ namespace 'check' do
     log_task_start(task)
 
     # -n: only check for and report problems, don't interactively prompt to fix them
-    # Ψ: QMK prefixes info-level log lines with this
-    results = RakeHelpers.system_with_passthrough('qmk doctor -n', exclude_lines_like: /Ψ/)
+    results = RakeHelpers.system_with_passthrough('qmk doctor -n',
+                                                  exclude_lines_like: RakeHelpers.qmk_exclude_lines_like)
     if results[:exit_code] != 0
       # At least as of January 2021, `qmk doctor` uses exit codes sensibly:
       # https://github.com/qmk/qmk_firmware/blob/master/lib/python/qmk/cli/doctor.py
