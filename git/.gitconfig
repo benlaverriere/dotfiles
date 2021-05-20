@@ -36,6 +36,8 @@
 [diff]
   submodule=log
   colorMoved = default
+[diff "json"]
+	textconv = python3 -m json.tool
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
