@@ -2,6 +2,8 @@
 
 # doesn't include bash, for the moment
 
+# make this a fix/check script, using chkstow to check and maybe -R to re-stow?
+# would be nice to have one mechanism (Rake) for cleaning everything up
 stow zsh
 stow shared_shell
 stow git

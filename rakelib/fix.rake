@@ -50,9 +50,15 @@ namespace 'fix' do
   task :qmk do |task|
     log_task_start(task)
 
-    # -y: attempt to fix any problems automatically, don't prompt interactively
-    RakeHelpers.system_with_passthrough('qmk doctor -y',
+    # just running `qmk doctor -y` will, by default, run a full `brew upgrade`.
+    # so that we don't unwittingly upgrade...everything on the system...let's upgrade QMK's dependencies manually, per
+    # this GitHub comment: https://github.com/qmk/qmk_firmware/issues/12794#issuecomment-832262830
+    RakeHelpers.system_with_passthrough('brew update && brew upgrade qmk/qmk/qmk && brew link --force avr-gcc@8 && brew link --force arm-gcc-bin@8 && python3 -m pip install -r qmk/zsa_qmk_firmware/requirements.txt',
                                         exclude_lines_like: RakeHelpers.qmk_exclude_lines_like)
+
+    # # -y: attempt to fix any problems automatically, don't prompt interactively
+    # RakeHelpers.system_with_passthrough('qmk doctor -y',
+    #                                     exclude_lines_like: RakeHelpers.qmk_exclude_lines_like)
     log_task_end(task)
   end
 end
