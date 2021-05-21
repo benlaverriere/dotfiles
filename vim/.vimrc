@@ -118,12 +118,12 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 
 " Searches:
-" - g for "grep", whatever's currently my preference (while adjusting to rg)
-" - a for ag specifically
-" - r for rg specifically
+" g for "grep", whatever's currently my preference (while adjusting to rg)
 nnoremap <leader>g :Rg<cr>
-nnoremap <leader>a :Ag<cr>
-nnoremap <leader>r :Rg<cr>
+nnoremap <leader>ag :Ag<cr>
+nnoremap <leader>rg :Rg<cr>
+" Rg current word (https://github.com/junegunn/fzf.vim/issues/714)
+nnoremap <silent> <Leader>gg :Rg <C-R><C-W><CR>
 
 nnoremap <leader>h :nohlsearch<cr>
 " find git merge conflicts
