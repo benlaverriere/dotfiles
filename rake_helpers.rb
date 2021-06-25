@@ -1,5 +1,6 @@
 require 'open3'
 
+# Utilities for performing dependency-related tasks in Rake
 module RakeHelpers
   def self.submodules_are_current(git_output)
     no_input = git_output.strip.empty?
