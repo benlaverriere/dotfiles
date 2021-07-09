@@ -4,7 +4,7 @@ desc 'Apply updates to all modules'
 task fix: %w[fix:all]
 
 namespace 'fix' do
-  task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |_task| # rubocop:disable Rake/Desc
+  task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |_task|
     puts '🍻 done! 🍻'
   end
 
