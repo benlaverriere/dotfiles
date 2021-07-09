@@ -7,7 +7,7 @@ desc 'Check all modules for updates, but do not apply any changes'
 task check: %w[check:all]
 
 namespace 'check' do
-  task all: %w[check:brewfile check:cask check:formulae check:git check:vim check:qmk] do |_task| # rubocop:disable Rake/Desc
+  task all: %w[check:brewfile check:cask check:formulae check:git check:vim check:qmk] do |_task|
     if advice.length > initial_advice.length
       puts(advice)
     else
