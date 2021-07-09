@@ -10,7 +10,9 @@ let mapleader = " "
 augroup FileTypes
   autocmd!
   au BufRead,BufNewFile *.md set filetype=markdown
+  au BufRead,BufNewFile *.todo set filetype=markdown
   au BufRead,BufNewFile *.thor set filetype=ruby
+  au BufRead,BufNewFile Podfile set filetype=ruby
   au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
   au BufRead,BufNewFile Fastfile set filetype=ruby
   au BufRead,BufNewFile Matchfile set filetype=ruby
