@@ -25,9 +25,9 @@
   syntax-theme = Solarized (Dark)
 [delta "decorations"]
     commit-decoration-style = bold yellow box ul
-    file-style = bold yellow ul
+    file-style = bold yellow box ul
     file-decoration-style = none
-    hunk-header-decoration-style = cyan box ul
+    hunk-header-decoration-style = cyan ul
 [delta "line-numbers"]
     line-numbers-left-style = cyan
     line-numbers-right-style = cyan
