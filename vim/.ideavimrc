@@ -1,2 +1,3 @@
 "set relativenumber number
 source ~/.vimrc
+set ideajoin
