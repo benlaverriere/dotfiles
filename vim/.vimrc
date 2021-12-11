@@ -130,3 +130,8 @@ nnoremap <silent> <Leader>gg :Rg <C-R><C-W><CR>
 nnoremap <leader>h :nohlsearch<cr>
 " find git merge conflicts
 nnoremap <leader>m /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
+
+augroup typescript
+  " by default, typescript-vim runs tsc on the current file, which apparently means ignoring tsconfig.json
+  autocmd FileType typescript :set makeprg=tsc
+augroup END

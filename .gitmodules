@@ -56,3 +56,6 @@
 [submodule "vim-rhubarb"]
 	path = vim/.vim/pack/benlaverriere/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
+[submodule "typescript-vim"]
+	path = vim/.vim/pack/benlaverriere/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
