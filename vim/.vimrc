@@ -135,3 +135,6 @@ augroup typescript
   " by default, typescript-vim runs tsc on the current file, which apparently means ignoring tsconfig.json
   autocmd FileType typescript :set makeprg=tsc
 augroup END
+
+" Spelling
+nnoremap <leader>s :setlocal spell! spelllang=en_us<cr>

@@ -45,6 +45,7 @@ brew 'wget'
 brew 'yoannmoinet/brews/notee'
 brew 'zsh'
 
+cask 'bluesnooze'
 cask 'discord'
 cask 'flux'
 cask 'font-jetbrains-mono'

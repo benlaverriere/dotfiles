@@ -41,8 +41,8 @@ path+="$(python3 -m site --user-base)/bin"
 path+="/usr/local/opt/arm-gcc-bin@8/bin" # for QMK
 export PATH
 
-source /usr/local/share/chruby/chruby.sh
-chruby ruby
+# source /usr/local/share/chruby/chruby.sh
+# chruby ruby
 
 # shellcheck source=../shared_shell/bin/git-prompt.sh
 source git-prompt.sh
