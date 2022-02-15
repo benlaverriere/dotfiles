@@ -6,9 +6,26 @@
   color: black;
 }
 
+#mainFrameContainer {
+  display: flex;
+}
+
 #mainFrameTopLeft, #mainFrameTopRight, #mainFrameTopInner {
   background: white;
   color: black;
+}
+
+#mainFrameTopLeft {
+  flex: 1;
+  border-right: 1px dotted black;
+}
+
+#mainFrameTopInner {
+  height: unset;
+}
+
+#mainFrameInner {
+  flex: 6;
 }
 
 #baseFrame {
@@ -48,9 +65,14 @@
   flex: 4;
 }
 
+#subTabMenu ul {
+  overflow: inherit;
+}
+
 #subTabMenu ul li {
   margin: 0;
-  padding: .6ex .6ex 2ex;
+  padding: 0;
+  float: none;
 }
 
 #subTabMenu ul li * {
@@ -61,6 +83,23 @@
   font-weight: normal;
   color: #FFD926;
   background: black;
+  border-color: black;
+}
+
+#subTabMenu li a:hover {
+  color: black;
+  border-right: 1ex solid black;
+}
+
+#subTabMenu li a, #subTabMenu li.selected {
+  text-align: left;
+  display: block;
+  border-right: 1ex solid white;
+}
+
+#subTabMenu li a, #subMenu div a, #subTabMenu li.selected {
+  padding: 4px 0 6px 17px;
+  margin: 0;
 }
 
 #mainFrameBottomLeft {
@@ -132,7 +171,7 @@
   margin-left: 1em;
 }
 
-input#logout {
+input#logout, input#login {
   width: 1em;
   height: 2em;
   margin: 0.2em;
@@ -148,7 +187,7 @@ input#logout {
   transform: rotate(-90deg);
 }
 
-input#logout:hover {
+input#logout:hover, input#login:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M5 7L1 3H9L5 7Z' fill='white'/%3E%3C/svg%3E");
   background-color: black;
   transform: rotate(-90deg);
@@ -229,14 +268,21 @@ input#logout:hover {
   display: none;
 }
 
-#subMenu .selected a{
+#subMenu .selected a {
   /* from the original — not in keeping with monochrome but I actually like this yellow */
   color: #FFD926
 }
 
+#subMenu div a {
+  border-right: 1ex solid white;
+}
+
+#subMenu .selected a {
+  border-color: black;
+}
+
 #subMenu .selected a:hover {
-  border-right-color: white;
-  color: white;
+  color: #FFD926;
 }
 
 #subMenu div a:hover {
@@ -249,8 +295,8 @@ input#logout:hover {
   padding: 0;
 }
 
-#headerFrameInner, #mainFrameTopInner {
-  height: inherit;
+#headerFrameInner {
+  height: unset;
   border-bottom: 1px dotted black;
 }
 
@@ -282,13 +328,20 @@ input#logout:hover {
 
 input[type="button"], input[type="submit"] {
   padding: 0.4em;
+  margin: 0 22px 2px 0;
   border: none;
   border-bottom: 1px solid black;
+  border-right: 1px solid black;
   background-color: white;
 }
 
+input[type="button"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
+  cursor: pointer;
+}
+
 input[type="button"]:active, input[type="submit"]:active {
-  border-bottom-width: 1ex;
+  border-width: 3px;
+  margin: 0 20px 0 0;
 }
 
 .contentsButtons {
@@ -341,4 +394,20 @@ table.errorHistory, table.errorHistory th, table.errorHistory td {
 
 #pageTitle {
   margin: 0;
+}
+
+table.multiHeader, .findNode, .findModel, .findStatus, .findIp {
+  width: inherit;
+}
+
+table.multiHeader thead th {
+  width: inherit;
+  padding: 0 1em;
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+h2, .contentsTable {
+  border-bottom: 3px double black;
 }
