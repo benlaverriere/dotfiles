@@ -192,6 +192,14 @@ td,
   justify-content: space-between;
 }
 
+#modelName h1::before {
+  content: "bandit (";
+}
+
+#modelName h1::after {
+  content: ")";
+}
+
 #headerFrame #corporateLogo {
   display: none;
 }
