@@ -94,6 +94,12 @@
   color: black;
 }
 
+/* style both menus' text explicitly so that adjacent items are the same size */
+#subMenu .selected a, #subMenu div a, #subTabMenu ul li.selected, #subTabMenu li a {
+  font-size: 0.9rem;
+  line-height: 125%;
+}
+
 #subTabMenu ul li.selected {
   font-weight: normal;
   color: #FFD926;
@@ -324,14 +330,49 @@ input#login:hover {
   color: black;
 }
 
+#headerFrameInner:after {
+  clear: none;
+}
+
 #tabMenu {
   margin: 0;
   padding: 0;
 }
 
+#tabMenu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#tabMenu > ul > li {
+  float: none;
+  display: flex;
+}
+
 #headerFrameInner {
   height: unset;
   border-bottom: 1px dotted black;
+  margin-bottom: 1px;
+
+}
+
+#tabMenu > ul > li > ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#tabMenu > ul > li > ul > li {
+  flex: 1;
+  vertical-align: bottom;
+}
+
+#tabMenu > ul > li > ul > li > a, #tabMenu > ul > li > ul > li.selected > p {
+  padding-top: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #tabMenu a,
@@ -340,14 +381,23 @@ input#login:hover {
 }
 
 #tabMenu ul li ul li {
+  padding: 0;
+  margin: 0;
   padding-bottom: 1ex;
   margin-bottom: 0;
 }
 
-#tabMenu ul li ul li:hover {
+#tabMenu > ul > li > ul > li:hover {
   padding-bottom: 0;
   border-bottom: 1ex solid black;
   margin-bottom: 0;
+}
+
+#tabMenu a {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: bottom;
 }
 
 #tabMenu ul li ul li:hover a,
@@ -361,8 +411,11 @@ input#login:hover {
 #tabMenu .selected:hover p {
   color: #FFD926;
   background: black;
-  padding-bottom: 1ex;
   border-bottom: 0;
+}
+
+#tabMenu .selected:hover p {
+  border-bottom: 1ex solid black;
 }
 
 input[type="button"],
@@ -461,4 +514,41 @@ table.multiHeader thead th {
 h2,
 .contentsTable {
   border-bottom: 3px double black;
+}
+
+#solutions {
+  float: none;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+}
+
+#solutions > div, #solutions div span {
+  background: none;
+  float: none;
+  margin: 0;
+  padding: 0;
+  height: unset;
+}
+
+#solutions div a {
+  display: block;
+  /* https://fontawesome.com/icons/square-arrow-up-right?s=solid */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M384 32H64C28.65 32 0 60.66 0 96v320c0 35.34 28.65 64 64 64h320c35.35 0 64-28.66 64-64V96C448 60.66 419.3 32 384 32zM344 312c0 17.69-14.31 32-32 32s-32-14.31-32-32V245.3l-121.4 121.4C152.4 372.9 144.2 376 136 376s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L234.8 200H168c-17.69 0-32-14.31-32-32s14.31-32 32-32h144c17.69 0 32 14.31 32 32V312z'/%3E%3C/svg%3E");
+  background-size: 0.8rem;
+  background-repeat: no-repeat;
+  background-position: center right 0.5rem;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  height: 100%;
+}
+
+#solutions div span {
+  display: block;
+}
+
+#solutions div a:hover {
+  color: #FFD926;
+  background-color: black;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M384 32H64C28.65 32 0 60.66 0 96v320c0 35.34 28.65 64 64 64h320c35.35 0 64-28.66 64-64V96C448 60.66 419.3 32 384 32zM344 312c0 17.69-14.31 32-32 32s-32-14.31-32-32V245.3l-121.4 121.4C152.4 372.9 144.2 376 136 376s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L234.8 200H168c-17.69 0-32-14.31-32-32s14.31-32 32-32h144c17.69 0 32 14.31 32 32V312z' fill='white'/%3E%3C/svg%3E");
 }
