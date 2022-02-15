@@ -1,6 +1,16 @@
 /* minimalist styles for Brother admin pages, for use with Stylus extension */
 
-#frameContainer, #mainFrame, #mainFrameContainer, #mainFrameTopLeft, #mainFrameInner, #subMenu, #headerFrameContainerLeft, #headerFrameContainerRight, #headerFrameInner, #SetBoxAuthRight, #SetBoxAuthLeft {
+#frameContainer,
+#mainFrame,
+#mainFrameContainer,
+#mainFrameTopLeft,
+#mainFrameInner,
+#subMenu,
+#headerFrameContainerLeft,
+#headerFrameContainerRight,
+#headerFrameInner,
+#SetBoxAuthRight,
+#SetBoxAuthLeft {
   border: 0;
   background: transparent;
   color: black;
@@ -10,7 +20,9 @@
   display: flex;
 }
 
-#mainFrameTopLeft, #mainFrameTopRight, #mainFrameTopInner {
+#mainFrameTopLeft,
+#mainFrameTopRight,
+#mainFrameTopInner {
   background: white;
   color: black;
 }
@@ -36,7 +48,9 @@
   min-width: inherit;
 }
 
-#mainFrameTopInner, #subTabMenu ul, #headerFrameInner {
+#mainFrameTopInner,
+#subTabMenu ul,
+#headerFrameInner {
   padding: 0;
   margin: 0;
 }
@@ -54,7 +68,8 @@
   width: inherit;
 }
 
-#subMenu div, #subMenu .selected {
+#subMenu div,
+#subMenu .selected {
   width: inherit;
   margin: 0;
 }
@@ -91,13 +106,16 @@
   border-right: 1ex solid black;
 }
 
-#subTabMenu li a, #subTabMenu li.selected {
+#subTabMenu li a,
+#subTabMenu li.selected {
   text-align: left;
   display: block;
   border-right: 1ex solid white;
 }
 
-#subTabMenu li a, #subMenu div a, #subTabMenu li.selected {
+#subTabMenu li a,
+#subMenu div a,
+#subTabMenu li.selected {
   padding: 4px 0 6px 17px;
   margin: 0;
 }
@@ -112,7 +130,18 @@
   padding: 1em;
 }
 
-#subMenu div a, #modelName h1, h2, h3, h4, h5, h6, .items, a, th, td, .longItems {
+#subMenu div a,
+#modelName h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.items,
+a,
+th,
+td,
+.longItems {
   color: black;
 }
 
@@ -126,11 +155,13 @@
   font-style: italic;
 }
 
-#subMenu .selected .top, #subMenu .selected .bottom {
+#subMenu .selected .top,
+#subMenu .selected .bottom {
   background: none;
 }
 
-.contact, .location {
+.contact,
+.location {
   background: none;
   text-indent: inherit;
 }
@@ -171,15 +202,15 @@
   margin-left: 1em;
 }
 
-input#logout, input#login {
+input#logout,
+input#login {
   width: 1em;
   height: 2em;
   margin: 0.2em;
-  
   /* white arrow/triangle */
   /* https://gist.github.com/szilagyi/6624176 plus https://yoksel.github.io/url-encoder/ */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M5 7L1 3H9L5 7Z' fill='black'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;
   background-color: transparent;
@@ -187,7 +218,8 @@ input#logout, input#login {
   transform: rotate(-90deg);
 }
 
-input#logout:hover, input#login:hover {
+input#logout:hover,
+input#login:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M5 7L1 3H9L5 7Z' fill='white'/%3E%3C/svg%3E");
   background-color: black;
   transform: rotate(-90deg);
@@ -220,7 +252,9 @@ input#logout:hover, input#login:hover {
   content: '[status: etc] '
 }
 
-.contentsGroup, .items dd, .items dt {
+.contentsGroup,
+.items dd,
+.items dt {
   padding-left: 0;
   border: none;
 }
@@ -300,7 +334,8 @@ input#logout:hover, input#login:hover {
   border-bottom: 1px dotted black;
 }
 
-#tabMenu a, #tabMenu ul li ul li {
+#tabMenu a,
+#tabMenu ul li ul li {
   background: white;
 }
 
@@ -315,18 +350,23 @@ input#logout:hover, input#login:hover {
   margin-bottom: 0;
 }
 
-#tabMenu ul li ul li:hover a, #tabMenu ul li ul li a {
+#tabMenu ul li ul li:hover a,
+#tabMenu ul li ul li a {
   color: black;
 }
 
-#tabMenu .selected, #tabMenu .selected p, #tabMenu .selected:hover, #tabMenu .selected:hover p {
+#tabMenu .selected,
+#tabMenu .selected p,
+#tabMenu .selected:hover,
+#tabMenu .selected:hover p {
   color: #FFD926;
   background: black;
   padding-bottom: 1ex;
   border-bottom: 0;
 }
 
-input[type="button"], input[type="submit"] {
+input[type="button"],
+input[type="submit"] {
   padding: 0.4em;
   margin: 0 22px 2px 0;
   border: none;
@@ -335,11 +375,15 @@ input[type="button"], input[type="submit"] {
   background-color: white;
 }
 
-input[type="button"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
+input[type="button"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
   cursor: pointer;
 }
 
-input[type="button"]:active, input[type="submit"]:active {
+input[type="button"]:active,
+input[type="submit"]:active {
   border-width: 3px;
   margin: 0 20px 0 0;
 }
@@ -359,7 +403,9 @@ input[type="button"]:active, input[type="submit"]:active {
   content: '✔ '
 }
 
-table.errorHistory, table.errorHistory th, table.errorHistory td {
+table.errorHistory,
+table.errorHistory th,
+table.errorHistory td {
   width: inherit;
   padding: 0 1em;
   color: black;
@@ -396,7 +442,11 @@ table.errorHistory, table.errorHistory th, table.errorHistory td {
   margin: 0;
 }
 
-table.multiHeader, .findNode, .findModel, .findStatus, .findIp {
+table.multiHeader,
+.findNode,
+.findModel,
+.findStatus,
+.findIp {
   width: inherit;
 }
 
@@ -408,6 +458,7 @@ table.multiHeader thead th {
   border-bottom: 1px solid black;
 }
 
-h2, .contentsTable {
+h2,
+.contentsTable {
   border-bottom: 3px double black;
 }
