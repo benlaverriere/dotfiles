@@ -15,6 +15,13 @@ alias sup='echo $(now) "$(weather)" $(battery)'
 alias todo="git diff --name-only origin/master | xargs ag TODO"
 alias weather='curl -s "wttr.in?format=%c%20%20%t%20%m"'
 
+think() {
+  today=$(date +"%Y_%m_%d")
+  now=$(date +"%A %d %B %H:%M")
+  echo "# $now\n\n" > "$today.md"
+  vim "$today.md"
+}
+
 # TODO extract functions to their own file
 medit() {
   touch $1
