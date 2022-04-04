@@ -90,6 +90,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 highlight Search gui=underline cterm=underline
 highlight ALEError ctermbg=Red
 highlight Comment cterm=italic
+highlight TK ctermbg=Red guibg=red ctermfg=white
+match TK /TK/
 
 " limelight + goyo = focused text editing
 nnoremap <leader>gy :Goyo<cr>
