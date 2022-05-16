@@ -6,6 +6,7 @@ syntax on
 set omnifunc=syntaxcomplete#Complete
 inoremap jk <ESC>
 let mapleader = " "
+set mouse=a
 
 augroup FileTypes
   autocmd!
