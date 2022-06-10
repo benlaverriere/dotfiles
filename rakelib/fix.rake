@@ -1,10 +1,17 @@
 require_relative '../rake_helpers'
 
 desc 'Apply updates to all modules'
-task fix: %w[fix:all]
+task fix: %w[fix:most]
+
+most_tasks = %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim].freeze
+all_tasks = (most_tasks + %w[fix:qmk]).freeze
 
 namespace 'fix' do
-  task all: %w[fix:brewfile fix:cask fix:formulae fix:git fix:vim fix:qmk] do |_task|
+  task most: most_tasks do |_task|
+    puts '🍻 done! 🍻'
+  end
+
+  task all: all_tasks do |_task|
     puts '🍻 done! 🍻'
   end
 
