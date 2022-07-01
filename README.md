@@ -12,6 +12,8 @@ Create `~/.gitconfig_local` with contents like:
 
 [Install Homebrew](https://brew.sh/) so that we can install other software.
 
+Clone this repo.
+
 Run `script/bootstrap.sh` to set everything up for the first time.
 Thereafter, run `[bundle exec] rake fix` to update things.
 
@@ -29,5 +31,6 @@ Thereafter, run `[bundle exec] rake fix` to update things.
 
 ## QMK
 
+- `script/qmk.sh` and maybe other setup via Homebrew
 - `qmk configure` and `qmk flash`
 - Using a weekly build of Plover until 4.0 is released and casked
