@@ -20,6 +20,6 @@ script/stow_it_all.sh
 
 "$(brew --prefix)/opt/fzf/install"
 script/iterm.sh
-script/qmk.sh
+#script/qmk.sh
 script/kokoi.sh
 script/terminfo.sh
