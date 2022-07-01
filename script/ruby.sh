@@ -4,6 +4,7 @@
 # Replicating the Brewfile a bit, but this allows us to run ruby.sh before installing the whole Brewfile
 brew install ruby-install
 brew install chruby
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 
 # Install a new Ruby and use it
 ruby-install ruby
