@@ -3,13 +3,13 @@ require_relative '../rake_helpers'
 initial_advice = ['', '🍻 results 🍻']
 *advice = *initial_advice
 
-desc 'Check all modules for updates, but do not apply any changes'
 task check: %w[check:most]
 
 most_tasks = %w[check:brewfile check:cask check:formulae check:git check:vim].freeze
 all_tasks = (most_tasks + %w[check:qmk]).freeze
 
 namespace 'check' do
+  desc 'Check commonly-used modules for update, but do not apply any changes'
   task most: most_tasks do |_task|
     if advice.length > initial_advice.length
       puts(advice)
@@ -18,6 +18,7 @@ namespace 'check' do
     end
   end
 
+  desc 'Check all modules for updates, but do not apply any changes'
   task all: all_tasks do |_task|
     if advice.length > initial_advice.length
       puts(advice)
