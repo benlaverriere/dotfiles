@@ -2,7 +2,7 @@
 
 # Add Homebrew's zsh to the list of allowed shells and switch to it.
 
-ZSH_LINE='/usr/local/bin/zsh'
+ZSH_LINE="$(brew --prefix)/bin/zsh"
 TARGET_FILE='/etc/shells'
 
   sudo grep -qxF "$ZSH_LINE" "$TARGET_FILE" || echo "$ZSH_LINE" | sudo tee -a "$TARGET_FILE" > /dev/null
@@ -12,5 +12,5 @@ TARGET_FILE='/etc/shells'
 #                                                               ^ via a privileged `tee` with the -a[ppend] flag
 #                                                                                            ^ and discard tee's output
 
-  chsh -s /usr/local/bin/zsh
+  chsh -s "$ZSH_LINE"
 # ^ change our login shell to the newly-installed and -allowed zsh
