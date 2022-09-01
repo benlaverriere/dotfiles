@@ -6,6 +6,7 @@ tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/core'
 
+brew 'bash'
 brew 'bat'
 brew 'chruby'
 brew 'csview'
