@@ -81,6 +81,16 @@ colorscheme solarized
 
 let g:ale_fix_on_save = 1
 let g:ale_linters_ignore = {'tex': ['lacheck']}
+nnoremap <leader>ale :call ToggleALEAutofix()<cr>
+function! ToggleALEAutofix()
+    if g:ale_fix_on_save
+        let g:ale_fix_on_save = 0
+        echom "ALE fix on save OFF"
+    else
+        let g:ale_fix_on_save = 1
+        echom "ALE fix on save ON"
+    endif
+endfunction
 
 " Navigate between ALE errors quickly
 " TODO understand why nnoremap doesn't work for these
