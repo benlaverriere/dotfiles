@@ -41,7 +41,11 @@ path+="$(python3 -m site --user-base)/bin"
 path+="/usr/local/opt/arm-gcc-bin@8/bin" # for QMK
 export PATH
 
-source /usr/local/share/chruby/chruby.sh
+if [ $(uname -p) = 'arm' ]; then
+  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+else
+  source /usr/local/share/chruby/chruby.sh
+fi
 chruby ruby
 
 # shellcheck source=../shared_shell/bin/git-prompt.sh
@@ -78,10 +82,11 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-# fastlane tab-completion
-. ~/.fastlane/completions/completion.sh
+# fastlane tab-completion, if globally installed
+[ -f ~/.fastlane ] && . ~/.fastlane/completions/completion.sh
 
 # machine-specific addenda
 # shellcheck source=./addenda/sample
 for f in ~/zsh_addenda/*; do source "$f"; done
 if [ -e /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /Users/ben/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ben/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
