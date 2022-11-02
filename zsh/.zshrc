@@ -90,3 +90,9 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 for f in ~/zsh_addenda/*; do source "$f"; done
 if [ -e /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 if [ -e /Users/ben/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ben/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ben/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ben/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ben/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ben/google-cloud-sdk/completion.zsh.inc'; fi
