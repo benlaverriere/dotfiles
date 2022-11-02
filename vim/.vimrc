@@ -25,7 +25,9 @@ augroup END
 " notable kudos to https://www.youtube.com/watch?v=XA2WjJbmmoM
 set path+=**
 set wildmenu
+" ideally just want $(brew --prefix) here
 set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 nnoremap <leader>f :Files<CR>
 
 " fzf's :Ag matches filenames by default.
