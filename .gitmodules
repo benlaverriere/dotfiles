@@ -22,9 +22,6 @@
 [submodule "repeat"]
 	path = vim/.vim/pack/benlaverriere/start/repeat
 	url = https://tpope.io/vim/repeat.git
-[submodule "vim-colors-solarized"]
-	path = vim/.vim/pack/benlaverriere/start/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "zsa_qmk_firmware"]
 	path = qmk/zsa_qmk_firmware
 	url = git@github.com:zsa/qmk_firmware.git
@@ -59,3 +56,6 @@
 [submodule "typescript-vim"]
 	path = vim/.vim/pack/benlaverriere/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim
+[submodule "vim-solarized8.git"]
+	path = vim/.vim/pack/benlaverriere/start/vim-solarized8.git
+	url = https://github.com/lifepillar/vim-solarized8.git

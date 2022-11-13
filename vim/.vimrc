@@ -78,8 +78,9 @@ packloadall
 silent! helptags ALL
 
 " Syntax highlighting requires Solarized, so after `packloadall`
+set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme solarized8_flat
 
 let g:ale_fix_on_save = 1
 let g:ale_linters_ignore = {'tex': ['lacheck']}
@@ -100,10 +101,16 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " color customizations
-highlight Search gui=underline cterm=underline
-highlight ALEError ctermbg=Red
-highlight Comment cterm=italic
-highlight TK ctermbg=Red guibg=red ctermfg=white
+if has('nvim')
+  highlight Search gui=underdot cterm=underline
+  highlight Comment guisp=italic cterm=italic
+  highlight SpellBad cterm=undercurl guisp=nocombine,undercurl
+else
+  highlight Search gui=underline cterm=underline
+  highlight Comment cterm=italic
+endif
+
+highlight link TK ALEError
 match TK /TK/
 
 " limelight + goyo = focused text editing
@@ -118,6 +125,11 @@ augroup END
 " Things from Learn Vimscript the Hard Way
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+if has('nvim')
+  nnoremap <leader>evv :split ~/.vimrc<cr>
+  nnoremap <leader>svv :source ~/.vimrc<cr>
+endif
 
 iabbrev kf Kingfisher
 iabbrev mj Mockingjay
