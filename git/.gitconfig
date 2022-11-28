@@ -6,6 +6,7 @@
   home = switch main
   sup = status -vv
   tidy = "!f() { git up && git checkout ${1-main} && git up && git delete-merged ${1-main}; }; f"
+  todo = "!f() { git diff --name-only ${1-origin/main} | xargs rg TODO; }; f"
   up = pull --rebase --autostash
   which = "!f() { git config --get alias.${1}; }; f"
 [color]
