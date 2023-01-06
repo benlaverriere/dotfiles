@@ -1,7 +1,6 @@
 *.swp
 .classpath
 .project
-.idea/*
 *.settings/*
 *target/*
 TODO.todo
