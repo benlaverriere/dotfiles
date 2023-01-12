@@ -66,7 +66,11 @@ PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")
 %(!.%F{1}.)➽ %f"
 RPROMPT="%F{magenta}〈\$(__watson_project)〉%b"
 
-export EDITOR=/usr/local/bin/vim
+if [ $(uname -p) = 'arm' ]; then
+  export EDITOR=/opt/homebrew/bin/vim
+else
+  export EDITOR=/usr/local/bin/vim
+fi
 export PAGER="less -RF -+X"
 
 # use Homebrew's OpenSSL 1.1 rather than the one installed by ruby-build, so that it gets upgraded
