@@ -62,3 +62,6 @@
 [submodule "kitty_icon_whiskers"]
 	path = src_not_stowed/kitty_icon_whiskers
 	url = https://github.com/samholmes/whiskers
+[submodule "vim-kitty"]
+	path = vim/.vim/pack/benlaverriere/start/vim-kitty
+	url = https://github.com/fladson/vim-kitty
