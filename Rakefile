@@ -22,7 +22,7 @@ desc 'Test the system_with_passthrough helper with a slow command'
 task :slow do |task|
   log_task_start(task)
   results = RakeHelpers.system_with_passthrough('for x in 1 2 3 4 5 6 7 8 9 10; do echo $x; sleep 1; done')
-  pp results
+  puts results
   log_task_end(task)
 end
 
