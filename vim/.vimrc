@@ -161,7 +161,14 @@ nnoremap <silent> <Leader>gg :Rg <C-R><C-W><CR>
 
 nnoremap <leader>h :nohlsearch<cr>
 " find git merge conflicts
-nnoremap <leader>m /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
+nnoremap <leader>mg /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
+
+nmap <Leader>m <Plug>ToggleMarkbar
+if has('nvim')
+      set shada+=!
+else
+      set viminfo+=!
+endif
 
 augroup typescript
   " by default, typescript-vim runs tsc on the current file, which apparently means ignoring tsconfig.json

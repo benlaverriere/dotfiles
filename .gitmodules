@@ -65,3 +65,6 @@
 [submodule "vim-kitty"]
 	path = vim/.vim/pack/benlaverriere/start/vim-kitty
 	url = https://github.com/fladson/vim-kitty
+[submodule "vim-markbar.git"]
+	path = vim/.vim/pack/benlaverriere/start/vim-markbar.git
+	url = https://github.com/Yilin-Yang/vim-markbar.git
