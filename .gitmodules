@@ -68,3 +68,6 @@
 [submodule "vim-markbar.git"]
 	path = vim/.vim/pack/benlaverriere/start/vim-markbar.git
 	url = https://github.com/Yilin-Yang/vim-markbar.git
+[submodule "rainbow_csv.git"]
+	path = vim/.vim/pack/benlaverriere/start/rainbow_csv.git
+	url = https://github.com/mechatroner/rainbow_csv.git
