@@ -26,14 +26,6 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle :compinstall filename '/Users/ben/.zshrc'
 # End of lines added by compinstall
 
-# see https://carlosbecker.com/posts/speeding-up-zsh
-autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-  compinit
-else
-  compinit -C
-fi
-
 path+=~/bin
 # TODO is this still needed? should we use `brew prefix` here?
 path+=/usr/local/sbin # for Homebrew formulae
@@ -92,11 +84,23 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # machine-specific addenda
 # shellcheck source=./addenda/sample
 for f in ~/zsh_addenda/*; do source "$f"; done
-if [ -e /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/benlaverriere/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-if [ -e /Users/ben/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ben/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ben/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ben/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ben/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ben/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Better SSH/Rsync/SCP Autocomplete (https://www.codyhiar.com/blog/zsh-autocomplete-with-ssh-config-file/)
+zstyle ':completion:*:(scp|rsync):*' tag-order ' hosts:-ipaddr:ip\ address hosts:-host:host files'
+zstyle ':completion:*:(ssh|scp|rsync|sesh|seshcp):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
+zstyle ':completion:*:(ssh|scp|rsync|sesh|seshcp):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+
+# see https://carlosbecker.com/posts/speeding-up-zsh
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
