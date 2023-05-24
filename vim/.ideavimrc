@@ -1,3 +1,5 @@
 "set relativenumber number
 source ~/.vimrc
 set ideajoin
+set commentary
+set surround
