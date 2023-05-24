@@ -1,4 +1,5 @@
 [alias]
+  aliases = config --get-regexp 'alias\\..*'
   # credit to https://haacked.com/archive/2014/07/28/github-flow-aliases/ for most of these
   branch-cleanup = branch --sort=committerdate --format='%(align:position=left,width=32)%(color:yellow)%(HEAD) %(color:reset default)%(committerdate:relative)%(end) %(color:green)%(refname:lstrip=-1) %(color:default)-> %(color:blue)%(upstream:short) %(color:default)'
   cob = checkout --track origin/main -b
@@ -20,33 +21,34 @@
   editor = vim
   attributesfile = ~/.gitattributes
   pager = delta
+  autocrlf = input
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [delta]
   features = side-by-side line-numbers decorations
   syntax-theme = Solarized (dark)
 [delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold yellow box ul
-    file-decoration-style = none
-    hunk-header-decoration-style = cyan ul
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow box ul
+  file-decoration-style = none
+  hunk-header-decoration-style = cyan ul
 [delta "line-numbers"]
-    line-numbers-left-style = cyan
-    line-numbers-right-style = cyan
-    line-numbers-minus-style = 124
-    line-numbers-plus-style = 28
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
 [diff]
   submodule=log
   colorMoved = default
 [diff "json"]
-	textconv = python3 -m json.tool
+  textconv = python3 -m json.tool
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
 [format]
-	pretty = format:%C(auto)%h %Cgreen%<(15,trunc)%an %C(auto)%<(60,trunc)%s %d
+  pretty = format:%C(auto)%h %Cgreen%<(15,trunc)%an %C(auto)%<(60,trunc)%s %d
 [include]
   # [user] values
   path = ~/.gitconfig_local
@@ -57,4 +59,4 @@
 [status]
   submodulesummary = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
