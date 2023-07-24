@@ -103,4 +103,5 @@ if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 else
   compinit -C
 fi
-
+compdef _ssh sesh=ssh
+compdef _scp seshcp=scp

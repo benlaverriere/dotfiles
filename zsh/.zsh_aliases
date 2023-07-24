@@ -30,6 +30,7 @@ medit() {
 }
 
 switch_java() {
+  echo "Trying to use Java $1..."
   export JAVA_HOME=`/usr/libexec/java_home -v $1`
   java -version
 }
