@@ -25,7 +25,7 @@
 [credential]
   helper = osxkeychain
 [delta]
-  features = side-by-side line-numbers decorations
+  features = side-by-side line-numbers decorations navigate
   syntax-theme = Solarized (dark)
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
@@ -38,10 +38,10 @@
   line-numbers-minus-style = 124
   line-numbers-plus-style = 28
 [diff]
-  submodule=log
+  submodule = log
   colorMoved = default
 [diff "json"]
-  textconv = python3 -m json.tool
+  command = jd -git-diff-driver -color -set
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f

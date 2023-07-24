@@ -1,1 +1,2 @@
 *.xw diff=json
+*.json diff=json
