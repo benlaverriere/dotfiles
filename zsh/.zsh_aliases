@@ -12,7 +12,7 @@ alias now='date +"%A %d %B %H:%M"'
 alias ql='qlmanage -p $@ &> /dev/null'
 alias scripts="sed -E '1d;\$d;s/[^\"]*\"([^\"][^\"]*)\",?.*/\1/' <(cat package.json | jq '.scripts | keys')"
 alias sup='echo $(now) "$(weather)" $(battery)'
-alias todo="git diff --name-only origin/master | xargs ag TODO"
+alias todo="git todo"
 alias weather='curl -s "wttr.in?format=%c%20%20%t%20%m"'
 
 think() {
@@ -30,9 +30,11 @@ medit() {
 }
 
 switch_java() {
-  echo "Trying to use Java $1..."
-  export JAVA_HOME=`/usr/libexec/java_home -v $1`
-  java -version
+  if [[ -z $1 ]]; then
+    export JAVA_HOME="~/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+  else
+    export JAVA_HOME=`/usr/libexec/java_home -v $1`
+  fi
 }
 
 be() {
