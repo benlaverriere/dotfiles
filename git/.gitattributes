@@ -1,2 +1,3 @@
 *.xw diff=json
 *.json diff=json
+*.pbxproj diff=xcdiff

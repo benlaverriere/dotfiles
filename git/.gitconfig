@@ -42,6 +42,8 @@
   colorMoved = default
 [diff "json"]
   command = jd -git-diff-driver -color -set
+[diff "xcdiff"]
+  command = ~/git-xcdiff.sh
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
