@@ -65,7 +65,7 @@ alias watson-daily-report='watson report -d --csv | perl -pe "s/(.+59,[^,]+?,)(.
 alias booted-simulator-name="xcrun simctl list devices booted -j | jq -j '.devices[] | select(length > 0) | map_values(.name)[0]'"
 
 # these are directory names:
-x86_apps=(mockingjay laminar interviews twopoems)
+x86_apps=(twopoems)
 function ns {
   current_app=$(basename $(pwd))
   # specify architecture either way, so that the value in /etc/nix/nix.conf doesn't matter
