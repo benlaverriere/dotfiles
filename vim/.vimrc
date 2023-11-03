@@ -159,6 +159,8 @@ nnoremap <leader>ag :Ag<cr>
 nnoremap <leader>rg :Rg<cr>
 " Rg current word (https://github.com/junegunn/fzf.vim/issues/714)
 nnoremap <silent> <Leader>gg :Rg <C-R><C-W><CR>
+" fzf search of open files
+nnoremap <leader>ww :Windows<cr>
 
 nnoremap <leader>h :nohlsearch<cr>
 " find git merge conflicts
