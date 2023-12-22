@@ -53,7 +53,7 @@ set numberwidth=5
 
 " Cursor position
 hi CursorLine cterm=bold ctermfg=NONE ctermbg=5
-set cursorline!
+set cursorline
 
 " Width/column
 set textwidth=120
@@ -108,7 +108,15 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " color customizations
 if has('nvim')
-  highlight Search gui=underdot cterm=underline
+  " define termcap escape sequences to start fancy underlines...
+  let &t_Cs = "\e[4:3m" " undercurl
+  let &t_Us = "\e[4:2m" " double underline
+  let &t_ds = "\e[4:4m" " underdotted
+  let &t_Ds = "\e[4:5m" " underdashed
+  " ...and the escape sequence to end all of them
+  let &t_Ce = "\e[4:0m"
+
+  highlight Search cterm=underdotted gui=underdotted guibg=NONE
   highlight Comment guisp=italic cterm=italic
   highlight SpellBad cterm=undercurl guisp=nocombine,undercurl
 else

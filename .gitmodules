@@ -71,3 +71,9 @@
 [submodule "rainbow_csv.git"]
 	path = vim/.vim/pack/benlaverriere/start/rainbow_csv.git
 	url = https://github.com/mechatroner/rainbow_csv.git
+[submodule "vim-sile.git"]
+	path = vim/.vim/pack/benlaverriere/start/vim-sile.git
+	url = https://github.com/sile-typesetter/vim-sile.git
+[submodule "vim-fountain.git"]
+	path = vim/.vim/pack/benlaverriere/start/vim-fountain.git
+	url = https://github.com/kblin/vim-fountain.git
