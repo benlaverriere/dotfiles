@@ -5,6 +5,7 @@
 *target/*
 TODO.todo
 .DS_Store
+nohup.out
 
 # ctags / gutentags
 tags

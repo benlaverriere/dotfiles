@@ -77,3 +77,6 @@
 [submodule "vim-fountain.git"]
 	path = vim/.vim/pack/benlaverriere/start/vim-fountain.git
 	url = https://github.com/kblin/vim-fountain.git
+[submodule "swift.vim"]
+	path = vim/.vim/pack/benlaverriere/start/swift.vim
+	url = https://github.com/keith/swift.vim
