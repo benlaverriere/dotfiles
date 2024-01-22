@@ -33,17 +33,20 @@ path+="$(python3 -m site --user-base)/bin"
 path+="/usr/local/opt/arm-gcc-bin@8/bin" # for QMK
 export PATH
 
-### chruby
-# if [ $(uname -p) = 'arm' ]; then
-#   source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-# else
-#   source /usr/local/share/chruby/chruby.sh
-# fi
-# chruby ruby
-
-### rbenv
-export PATH="$PATH:$HOME/.rbenv/bin"
-eval "$(rbenv init -)"
+chruby_hosts=(katahdin)
+if (($chruby_hosts[(Ie)$(hostname -s)])); then
+  # chruby
+  if [ $(uname -p) = 'arm' ]; then
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+  else
+    source /usr/local/share/chruby/chruby.sh
+  fi
+  chruby ruby
+else
+  # rbenv
+  export PATH="$PATH:$HOME/.rbenv/bin"
+  eval "$(rbenv init -)"
+fi
 
 # shellcheck source=../shared_shell/bin/git-prompt.sh
 source git-prompt.sh
