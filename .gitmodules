@@ -87,10 +87,10 @@
 	path = vim/.vim/pack/benlaverriere/start/vim-pollen
 	url = https://github.com/otherjoel/vim-pollen
 [submodule "vim-sexp"]
-	path = vim/.vim/pack/benlaverriere/start/vim-sexp
+	path = vim/.vim/pack/benlaverriere/opt/vim-sexp
 	url = https://github.com/benknoble/vim-sexp
 [submodule "vim-sexp-mappings-for-regular-people"]
-	path = vim/.vim/pack/benlaverriere/start/vim-sexp-mappings-for-regular-people
+	path = vim/.vim/pack/benlaverriere/opt/vim-sexp-mappings-for-regular-people
 	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people
 [submodule "reply.vim"]
 	path = vim/.vim/pack/benlaverriere/start/reply.vim
