@@ -21,6 +21,19 @@ augroup FileTypes
   au BufRead,BufNewFile Scanfile set filetype=ruby
 augroup END
 
+augroup Pollen
+  autocmd!
+
+  au! BufRead,BufNewFile *.pm set filetype=pollen
+  au! BufRead,BufNewFile *.pp set filetype=pollen
+  au! BufRead,BufNewFile *.ptree set filetype=pollen
+
+  autocmd FileType pollen setlocal wrap
+  autocmd FileType pollen setlocal linebreak
+
+  digraph ll 9674
+augroup END
+
 " file browsing
 " notable kudos to https://www.youtube.com/watch?v=XA2WjJbmmoM
 set path+=**

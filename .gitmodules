@@ -80,3 +80,18 @@
 [submodule "swift.vim"]
 	path = vim/.vim/pack/benlaverriere/start/swift.vim
 	url = https://github.com/keith/swift.vim
+[submodule "vim-racket"]
+	path = vim/.vim/pack/benlaverriere/start/vim-racket
+	url = https://github.com/wlangstroth/vim-racket
+[submodule "vim-pollen"]
+	path = vim/.vim/pack/benlaverriere/start/vim-pollen
+	url = https://github.com/otherjoel/vim-pollen
+[submodule "vim-sexp"]
+	path = vim/.vim/pack/benlaverriere/start/vim-sexp
+	url = https://github.com/benknoble/vim-sexp
+[submodule "vim-sexp-mappings-for-regular-people"]
+	path = vim/.vim/pack/benlaverriere/start/vim-sexp-mappings-for-regular-people
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people
+[submodule "reply.vim"]
+	path = vim/.vim/pack/benlaverriere/start/reply.vim
+	url = https://github.com/rhysd/reply.vim
