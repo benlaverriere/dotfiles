@@ -12,5 +12,7 @@ stow vim
 stow iterm
 stow misc
 
+ln -f -s "$(pwd)/src_not_stowed/git-format-staged/git-format-staged" "$HOME/bin"
+
 stow --dir ./qmk --target ./qmk/zsa_qmk_firmware/keyboards keyboards
 ln -f -s "$(pwd)/qmk/qmk.ini" "$HOME/Library/Application Support/qmk"

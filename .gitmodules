@@ -95,3 +95,6 @@
 [submodule "reply.vim"]
 	path = vim/.vim/pack/benlaverriere/start/reply.vim
 	url = https://github.com/rhysd/reply.vim
+[submodule "git-format-staged"]
+	path = src_not_stowed/git-format-staged
+	url = https://github.com/hallettj/git-format-staged
