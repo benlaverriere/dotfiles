@@ -4,3 +4,6 @@ Brewfile.lock.json
 bash/bash_addenda
 vim/.vim/.netrwhist
 zsh/zsh_addenda
+
+# see scripts/stow_it_all.sh for why this is necessary:
+shared_shell/bin/git-format-staged
