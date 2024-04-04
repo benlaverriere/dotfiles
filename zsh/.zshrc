@@ -113,3 +113,4 @@ else
 fi
 compdef sesh=ssh
 compdef seshcp=scp
+eval "$(mise activate)"
