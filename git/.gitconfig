@@ -5,6 +5,7 @@
   cob = checkout --track origin/main -b
   delete-merged = "!f() { git branch --merged ${1-main} | rg -v " ${1-main}$" | xargs git branch -d; }; f"
   home = switch main
+  praise = blame
   sup = status -vv
   tidy = "!f() { git up && git checkout ${1-main} && git up && git delete-merged ${1-main}; }; f"
   todo = "!f() { git diff --name-only ${1-origin/main} -z | xargs -0 rg -p TODO; }; f"
