@@ -5,7 +5,6 @@ filetype plugin indent on
 syntax on
 set omnifunc=syntaxcomplete#Complete
 inoremap jk <ESC>
-let mapleader = " "
 set mouse=a
 
 augroup FileTypes
@@ -41,7 +40,6 @@ set wildmenu
 " ideally just want $(brew --prefix) here
 set rtp+=/usr/local/opt/fzf
 set rtp+=/opt/homebrew/opt/fzf
-nnoremap <leader>f :Files<CR>
 
 " fzf's :Ag matches filenames by default.
 " from the author, via https://github.com/junegunn/fzf.vim/issues/346#issuecomment-288483704 :
@@ -105,7 +103,6 @@ let g:ale_fix_on_save = 1
 let g:ale_linters_ignore = {'tex': ['lacheck']}
 " if working outside a project with Bundler, disable the following:
 let g:ale_ruby_rubocop_executable = 'bundle'
-nnoremap <leader>ale :call ToggleALEAutofix()<cr>
 function! ToggleALEAutofix()
     if g:ale_fix_on_save
         let g:ale_fix_on_save = 0
@@ -143,22 +140,12 @@ highlight link TK ALEError
 match TK /TK/
 
 " limelight + goyo = focused text editing
-nnoremap <leader>gy :Goyo<cr>
 let g:goyo_width=130
 let g:limelight_conceal_ctermfg=10
 augroup Limelight
   autocmd! User GoyoEnter Limelight
   autocmd! User GoyoLeave Limelight!
 augroup END
-
-" Things from Learn Vimscript the Hard Way
-nnoremap <leader>ev :split $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-if has('nvim')
-  nnoremap <leader>evv :split ~/.vimrc<cr>
-  nnoremap <leader>svv :source ~/.vimrc<cr>
-endif
 
 iabbrev kf Kingfisher
 iabbrev mj Mockingjay
@@ -177,19 +164,6 @@ noremap <Right> <nop>
 
 " Searches:
 " g for "grep", whatever's currently my preference (while adjusting to rg)
-nnoremap <leader>g :Rg<cr>
-nnoremap <leader>ag :Ag<cr>
-nnoremap <leader>rg :Rg<cr>
-" Rg current word (https://github.com/junegunn/fzf.vim/issues/714)
-nnoremap <silent> <Leader>gg :Rg <C-R><C-W><CR>
-" fzf search of open files
-nnoremap <leader>ww :Windows<cr>
-
-nnoremap <leader>h :nohlsearch<cr>
-" find git merge conflicts
-nnoremap <leader>mg /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
-
-nmap <Leader>m <Plug>ToggleMarkbar
 if has('nvim')
       set shada+=!
 else
@@ -203,3 +177,25 @@ augroup END
 
 " Spelling
 nnoremap <leader>s :setlocal spell! spelllang=en_us<cr>
+
+" leader commands
+let mapleader = " "
+nnoremap          <leader>ag  :Ag<cr>
+nnoremap          <leader>ale :call ToggleALEAutofix()<cr>
+nnoremap <silent> <leader>d   <Plug>DashSearch
+nnoremap          <leader>ev  :split $MYVIMRC<cr>
+nnoremap          <leader>f   :Files<cr>
+nnoremap          <leader>g   :Rg<cr>
+nnoremap <silent> <leader>gg  :Rg <C-R><C-W><cr>
+nnoremap          <leader>gy  :Goyo<cr>
+nnoremap          <leader>h   :nohlsearch<cr>
+nnoremap          <Leader>m   <Plug>ToggleMarkbar
+nnoremap          <leader>mg  /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
+nnoremap          <leader>rg  :Rg<cr>
+nnoremap          <leader>sv  :source $MYVIMRC<cr>
+nnoremap          <leader>ww  :Windows<cr>
+
+if has('nvim')
+  nnoremap <leader>evv :split ~/.vimrc<cr>
+  nnoremap <leader>svv :source ~/.vimrc<cr>
+endif

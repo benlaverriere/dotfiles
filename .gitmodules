@@ -98,3 +98,6 @@
 [submodule "git-format-staged"]
 	path = src_not_stowed/git-format-staged
 	url = https://github.com/hallettj/git-format-staged
+[submodule "dash.vim"]
+	path = vim/.vim/pack/benlaverriere/start/dash.vim
+	url = https://github.com/rizzatti/dash.vim
