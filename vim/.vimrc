@@ -53,6 +53,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set shiftround
+set foldcolumn=1
 
 " Wrap (vim defaults this on, but just to be explicit) and do so at word boundaries
 set wrap linebreak

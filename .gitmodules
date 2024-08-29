@@ -101,3 +101,6 @@
 [submodule "dash.vim"]
 	path = vim/.vim/pack/benlaverriere/start/dash.vim
 	url = https://github.com/rizzatti/dash.vim
+[submodule "vim-ruby-fold"]
+	path = vim/.vim/pack/benlaverriere/start/vim-ruby-fold
+	url = https://github.com/vim-utils/vim-ruby-fold
