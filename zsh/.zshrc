@@ -62,9 +62,17 @@ __watson_project () {
 }
 
 setopt PROMPT_SUBST
-PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")%b
-%(!.%F{1}.)➽ %f"
-RPROMPT="%F{magenta}〈\$(__watson_project)〉%b"
+macos_prompt_dingbat="➽"
+nix_prompt_dingbat=" ⬡ "
+if (( ${+IN_NIX_SHELL} )); then
+  PROMPT="%F{blue}%n%F{10}@%F{blue}nix%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")%b
+%K{blue}%F{black}${nix_prompt_dingbat}%f%k "
+else
+  PROMPT="${shared_prompt}${macos_prompt_dingbat} %f"
+  PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")%b
+%(!.%F{1}.)${macos_prompt_dingbat} %f"
+  RPROMPT="%F{magenta}〈\$(__watson_project)〉%b"
+fi
 
 if [ $(uname -p) = 'arm' ]; then
   export EDITOR=/opt/homebrew/bin/vim
