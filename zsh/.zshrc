@@ -114,11 +114,18 @@ zstyle ':completion:*:(ssh|scp|rsync|sesh|seshcp):*:hosts-ipaddr' ignored-patter
 
 # see https://carlosbecker.com/posts/speeding-up-zsh
 autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-  compinit
-else
+if (( ${+IN_NIX_SHELL} )); then
   compinit -C
+else
+  # TODO: find a way to do this caching in Nix too, to speed up prompt loading
+  if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+    compinit
+  else
+    compinit -C
+  fi
 fi
+
 compdef sesh=ssh
 compdef seshcp=scp
+
 eval "$(mise activate)"
