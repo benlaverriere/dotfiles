@@ -6,6 +6,8 @@ syntax on
 set omnifunc=syntaxcomplete#Complete
 inoremap jk <ESC>
 set mouse=a
+set exrc
+set secure
 
 augroup FileTypes
   autocmd!
