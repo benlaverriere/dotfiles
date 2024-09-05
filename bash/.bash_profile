@@ -36,7 +36,13 @@ source colors.sh
 # shellcheck source=../shared_shell/bin/git-prompt.sh
 source git-prompt.sh
 
-export PS1="$Cyan\u$BGreen@$Green\h$BGreen:\w$BCyan\$(__git_ps1 \"(%s)\")$Color_Off\n➽  "
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s)")'
+if [ -z ${IN_NIX_SHELL+x} ]; then
+  PS1='\[\e[36m\]\u\[\e[0;2m\]@\[\e[0;32m\]\h\[\e[0;2;1m\]:\w\[\e[0;1m\]${PS1_CMD1}\n\[\e[0;96m\]➽\[\e[0m\] '
+else
+  PS1='\[\e[34m\]\u\[\e[0;2m\]@\[\e[0;34m\]nix\[\e[0;2;1m\]:\w\[\e[0;1m\]${PS1_CMD1}\n\[\e[30;44m\] ⬡ \[\e[0m\] '
+fi
+
 export EDITOR=/usr/local/bin/vim
 export PAGER="less -RF -+X"
 export CPPFLAGS="-I/usr/local/opt/qt5/include"

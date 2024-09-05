@@ -44,8 +44,10 @@ if (($chruby_hosts[(Ie)$(hostname -s)])); then
   chruby ruby
 else
   # rbenv
-  export PATH="$PATH:$HOME/.rbenv/bin"
-  eval "$(rbenv init -)"
+  if ! (( ${+IN_NIX_SHELL} )); then
+    export PATH="$PATH:$HOME/.rbenv/bin"
+    eval "$(rbenv init -)"
+  fi
 fi
 
 # shellcheck source=../shared_shell/bin/git-prompt.sh
@@ -68,7 +70,6 @@ if (( ${+IN_NIX_SHELL} )); then
   PROMPT="%F{blue}%n%F{10}@%F{blue}nix%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")%b
 %K{blue}%F{black}${nix_prompt_dingbat}%f%k "
 else
-  PROMPT="${shared_prompt}${macos_prompt_dingbat} %f"
   PROMPT="%F{cyan}%n%F{10}@%F{green}%m%F{10}:%B%~%F{brgreen}\$(__git_ps1 \"(%s)\")%b
 %(!.%F{1}.)${macos_prompt_dingbat} %f"
   RPROMPT="%F{magenta}〈\$(__watson_project)〉%b"
