@@ -104,3 +104,6 @@
 [submodule "vim-ruby-fold"]
 	path = vim/.vim/pack/benlaverriere/start/vim-ruby-fold
 	url = https://github.com/vim-utils/vim-ruby-fold
+[submodule "unicode.vim"]
+	path = vim/.vim/pack/benlaverriere/start/unicode.vim
+	url = https://github.com/chrisbra/unicode.vim
