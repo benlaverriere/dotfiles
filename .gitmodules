@@ -116,3 +116,6 @@
 [submodule "vim-just"]
 	path = vim/.vim/pack/benlaverriere/start/vim-just
 	url = https://github.com/NoahTheDuke/vim-just
+[submodule "vim-rainbow"]
+	path = vim/.vim/pack/benlaverriere/start/vim-rainbow
+	url = https://github.com/frazrepo/vim-rainbow

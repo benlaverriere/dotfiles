@@ -35,6 +35,11 @@ augroup Pollen
   digraph ll 9674
 augroup END
 
+augroup Racket
+  autocmd!
+  autocmd FileType racket call rainbow#load()
+augroup END
+
 " file browsing
 " notable kudos to https://www.youtube.com/watch?v=XA2WjJbmmoM
 set path+=**
