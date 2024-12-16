@@ -84,7 +84,7 @@ export PAGER="less -RF -+X"
 
 # use Homebrew's OpenSSL 1.1 rather than the one installed by ruby-build, so that it gets upgraded
 # $(brew --prefix openssl@1.1) gives this value, but brew is slow, so we'll hardcode for now
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
 
 # heroku autocomplete setup, modified to use `~` rather than an explicit username
 HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
