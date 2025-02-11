@@ -9,7 +9,7 @@
   sup = status -vv
   tidy = "!f() { git up && git checkout ${1-main} && git up && git delete-merged ${1-main}; }; f"
   # adding --sort makes rg abandon parallelism, but this should usually be a short list of files
-  todo = "!f() { git diff --name-only ${1-origin/main} -z | xargs -0 rg --pretty --sort=path TODO; }; f"
+  todo = "!f() { git diff --name-only ${1-origin/main} --diff-filter=d -z | xargs -0 rg --pretty --sort=path TODO; }; f"
   up = pull --rebase --autostash
   which = "!f() { git config --get alias.${1}; }; f"
 [color]
