@@ -9,7 +9,7 @@
 	url = https://github.com/lervag/vimtex
 [submodule "fzf"]
 	path = vim/.vim/pack/benlaverriere/start/fzf
-	url = git@github.com:junegunn/fzf.vim.git
+	url = https://github.com/junegunn/fzf.vim
 [submodule "gutentags"]
 	path = vim/.vim/pack/benlaverriere/start/gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
