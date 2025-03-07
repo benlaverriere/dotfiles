@@ -2,7 +2,8 @@
 
 # the upper echelon
 alias g="git"
-alias ll="ls -oAhG"
+alias ll="eza --long --all --git --icons --header"
+alias lll="ls -oAhG"
 alias w="watson"
 alias y="n yarn"
 
