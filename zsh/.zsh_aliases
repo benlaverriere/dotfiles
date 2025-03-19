@@ -76,7 +76,7 @@ function ns {
     desired_arch=aarch64-darwin
   fi
   echo "Using $desired_arch for Nix"
-  NIX_SHELL_PRESERVE_PROMPT=1 nix-shell --option system "$desired_arch" ${@:1}
+  JAVA_HOME= NIX_SHELL_PRESERVE_PROMPT=1 nix-shell --option system "$desired_arch" ${@:1}
 }
 
 alias eg='exa --long --git'
