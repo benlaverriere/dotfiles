@@ -107,3 +107,9 @@
 [submodule "unicode.vim"]
 	path = vim/.vim/pack/benlaverriere/start/unicode.vim
 	url = https://github.com/chrisbra/unicode.vim
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/plugins/zsh-autoquoter"]
+	path = zsh/plugins/zsh-autoquoter
+	url = https://github.com/ianthehenry/zsh-autoquoter.git
