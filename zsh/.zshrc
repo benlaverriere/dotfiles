@@ -136,5 +136,6 @@ eval "$(mise activate)"
 zsh_plugin_home="$HOME/dotfiles/zsh/plugins"
 source $zsh_plugin_home/zsh-autoquoter/zsh-autoquoter.zsh
 ZAQ_PREFIXES=('(g|git) commit( [^ ]##)# -[^ -]#m' 'ssh( -[^ ]##)# [^ -][^ ]#')
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=(zaq)
+
 source $zsh_plugin_home/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(zaq)
