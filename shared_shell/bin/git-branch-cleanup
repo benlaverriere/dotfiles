@@ -1,0 +1,103 @@
+#!/usr/bin/env ruby
+require 'open3'
+require 'io/console'
+
+Branch = Struct.new(:name, :upstream, :updated) do
+  def to_s
+    "#{name} -> #{upstream || '(no upstream)'} (#{updated})"
+  end
+end
+
+def current_branch
+  stdout, stderr, status = Open3.capture3('git branch --show-current')
+
+  unless status.success?
+    puts "Error showing current branch: #{stderr}"
+    exit 1
+  end
+
+  stdout.strip
+end
+
+def branch_list
+  format = ['committerdate:relative', 'refname:lstrip=-1', 'upstream:short']
+           .map { |field| "%(#{field})" }
+           .join("\t")
+
+  stdout, stderr, status = Open3.capture3("git branch --list --sort=committerdate --format='#{format}'")
+
+  unless status.success?
+    puts "Error listing open branches: #{stderr}"
+    exit 1
+  end
+
+  branch_properties = stdout.split("\n").map(&:strip).map do |line|
+    line.split("\t").map(&:strip)
+  end
+
+  branches = branch_properties
+             .map do |properties|
+    Branch.new(properties[1], properties[2], properties[0])
+  end
+
+  branches.reject { |branch| [current_branch, 'main'].include? branch.name }
+end
+
+def ask_to_remove(branch, index, count)
+  puts "#{branch} \tRemove? [ynq?] (#{index + 1}/#{count})"
+  response = $stdin.raw { |io| io.readpartial(100) }
+
+  case response
+  when /y(es)?/
+    :remove
+  when /n(o)?/
+    :keep
+  when /q(uit)?/
+    :quit
+  when "\u0003"
+    exit(1)
+  else
+    show_commands
+    ask_to_remove(branch, index, count)
+  end
+end
+
+def delete_branch(branch)
+  stdout, stderr, status = Open3.capture3("git branch --delete --force #{branch.name}")
+
+  unless status.success?
+    puts stderr
+    exit 1
+  end
+
+  puts "#{stdout.strip} Restore with git branch #{branch.name} <SHA1>"
+end
+
+def show_commands
+  puts %(
+  y (yes)    delete this branch
+  n (no)     do not delete this branch
+  q (quit)   do not delete this branch and stop reviewing branches
+  ? (help)   show this help
+
+  Branch deletions will use the --force flag; use git reflog to find past deleted branches if needed.
+  )
+end
+
+branch_count = branch_list.count
+
+if branch_count.zero?
+  puts 'No branches to clean up!'
+  exit
+end
+
+branch_list.each_with_index do |branch, index|
+  case ask_to_remove(branch, index, branch_count)
+  when :remove
+    delete_branch branch
+  when :quit
+    break
+  else
+    next
+  end
+end

@@ -1,7 +1,7 @@
 [alias]
   aliases = config --get-regexp 'alias\\..*'
   # credit to https://haacked.com/archive/2014/07/28/github-flow-aliases/ for most of these
-  branch-cleanup = branch --sort=committerdate --format='%(align:position=left,width=32)%(color:yellow)%(HEAD) %(color:reset default)%(committerdate:relative)%(end) %(color:green)%(refname:lstrip=-1) %(color:default)-> %(color:blue)%(upstream:short) %(color:default)'
+  branch-cleanup-manual = branch --sort=committerdate --format='%(align:position=left,width=32)%(color:yellow)%(HEAD) %(color:reset default)%(committerdate:relative)%(end) %(color:green)%(refname:lstrip=-1) %(color:default)-> %(color:blue)%(upstream:short) %(color:default)'
   cob = checkout --track origin/main -b
   delete-merged = "!f() { git branch --merged ${1-main} | rg -v " ${1-main}$" | xargs git branch -d; }; f"
   home = switch main
