@@ -136,6 +136,8 @@ eval "$(mise activate)"
 zsh_plugin_home="$HOME/dotfiles/zsh/plugins"
 source $zsh_plugin_home/zsh-autoquoter/zsh-autoquoter.zsh
 ZAQ_PREFIXES=('(g|git) commit( [^ ]##)# -[^ -]#m' 'ssh( -[^ ]##)# [^ -][^ ]#')
+ZAQ_PREFIXES+=('ns --run')
+ZAQ_PREFIXES+=('fd ') # this is a laughably incomplete pattern if I actually use flags or other args
 
 source $zsh_plugin_home/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(zaq)
