@@ -19,28 +19,32 @@ def current_branch
   stdout.strip
 end
 
-def branch_list
-  format = ['committerdate:relative', 'refname:lstrip=-1', 'upstream:short']
-           .map { |field| "%(#{field})" }
-           .join("\t")
+@branch_list_format = ['committerdate:relative', 'refname:lstrip=-1', 'upstream:short']
+                      .map { |field| "%(#{field})" }
+                      .join("\t")
 
-  stdout, stderr, status = Open3.capture3("git branch --list --sort=committerdate --format='#{format}'")
+def branch_list
+  stdout, stderr, status = Open3.capture3("git branch --list --sort=committerdate --format='#{@branch_list_format}'")
 
   unless status.success?
     puts "Error listing open branches: #{stderr}"
     exit 1
   end
 
-  branch_properties = stdout.split("\n").map(&:strip).map do |line|
-    line.split("\t").map(&:strip)
-  end
+  branch_properties = stdout.split("\n").map(&:strip).map { |line| branch_listing_to_properties(line) }
 
-  branches = branch_properties
-             .map do |properties|
+  branch_properties_to_models(branch_properties)
+    .reject { |branch| [current_branch, 'main'].include? branch.name }
+end
+
+def branch_listing_to_properties(line)
+  line.split("\t").map(&:strip)
+end
+
+def branch_properties_to_models(branch_properties)
+  branch_properties.map do |properties|
     Branch.new(properties[1], properties[2], properties[0])
   end
-
-  branches.reject { |branch| [current_branch, 'main'].include? branch.name }
 end
 
 def ask_to_remove(branch, index, count)
