@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-rake
   - rubocop-rspec
 
@@ -15,3 +15,5 @@ Style/AsciiComments:
   Enabled: false
 Metrics/BlockLength:
   Enabled: false
+Metrics/MethodLength:
+  Max: 15
