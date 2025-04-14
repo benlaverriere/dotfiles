@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Store ktfmt JAR in a temp file and ensure it's removed when the script ends or crashes
+# kudos: https://unix.stackexchange.com/a/181938
+tmpfile=$(mktemp /tmp/ktfmt.jar.XXX)
+exec 3>"$tmpfile"
+exec 4<"$tmpfile"
+rm "$tmpfile"
+
+wget \
+ --quiet \
+ --output-document="$tmpfile" \
+ --progress=bar \
+ https://repo1.maven.org/maven2/com/facebook/ktfmt/0.54/ktfmt-0.54-jar-with-dependencies.jar
+
+java -jar "$tmpfile" "$@"
