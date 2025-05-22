@@ -10,8 +10,6 @@ updates:
       time: "04:00"
       timezone: "America/New_York"
     open-pull-requests-limit: 10
-    reviewers:
-      - "benlaverriere"
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
@@ -20,5 +18,3 @@ updates:
       time: "04:00"
       timezone: "America/New_York"
     open-pull-requests-limit: 10
-    reviewers:
-      - "benlaverriere"
