@@ -1,8 +1,6 @@
 tap 'goles/battery'
 tap 'heroku/brew'
 tap 'homebrew/bundle'
-tap 'homebrew/cask-drivers'
-tap 'homebrew/cask-fonts'
 
 brew 'bash'
 brew 'bat'
