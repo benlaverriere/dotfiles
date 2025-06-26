@@ -65,18 +65,8 @@ alias watson-daily-report='watson report -d --csv | perl -pe "s/(.+59,[^,]+?,)(.
 
 alias booted-simulator-name="xcrun simctl list devices booted -j | jq -j '.devices[] | select(length > 0) | map_values(.name)[0]'"
 
-# these are directory names:
-x86_apps=(twopoems)
 function ns {
-  current_app=$(basename $(pwd))
-  # specify architecture either way, so that the value in /etc/nix/nix.conf doesn't matter
-  if (($x86_apps[(Ie)$current_app])); then
-    desired_arch=x86_64-darwin
-  else
-    desired_arch=aarch64-darwin
-  fi
-  echo "Using $desired_arch for Nix"
-  JAVA_HOME= NIX_SHELL_PRESERVE_PROMPT=1 nix-shell --option system "$desired_arch" ${@:1}
+  JAVA_HOME= NIX_SHELL_PRESERVE_PROMPT=1 nix-shell ${@:1}
 }
 
 alias eg='exa --long --git'
