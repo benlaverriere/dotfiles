@@ -113,3 +113,6 @@
 [submodule "zsh/plugins/zsh-autoquoter"]
 	path = zsh/plugins/zsh-autoquoter
 	url = https://github.com/ianthehenry/zsh-autoquoter.git
+[submodule "vim-just"]
+	path = vim/.vim/pack/benlaverriere/start/vim-just
+	url = https://github.com/NoahTheDuke/vim-just
