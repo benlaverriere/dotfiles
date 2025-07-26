@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Set up a Ruby installation that's entirely within our control, inspired by
 # https://github.com/monfresh/install-ruby-on-macos
 
