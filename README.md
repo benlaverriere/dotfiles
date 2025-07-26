@@ -1,26 +1,26 @@
 # dotfiles
 
-Ensure that `git` is installed locally.
-
-Create `~/.gitconfig_local` with contents like:
-
-```
-[user]
-  name = "Ben LaVerriere"
-  email = benlaverriere@example.com
-```
-
 [Install Homebrew](https://brew.sh/) so that we can install other software.
+
+Run the following script:
+
+```sh
+!/usr/bin/env zsh
+
+brew install git
+brew install just
+
+```
 
 Clone this repo.
 
-Run `script/bootstrap.sh` to set everything up for the first time.
-Thereafter, run `[bundle exec] rake fix` to update things.
+Run `just bootstrap` to set everything up for the first time.
+Thereafter, run `just fix` to update things.
 
 ## resources
 
 - [Vim 8 native package management](https://shapeshed.com/vim-packages/)
-  - You probably want `script/add_vim_plugin.rb <url> [submodule_alias]`
+  - You probably want `just add-vim-plugin <url> [submodule_alias]`
 
 
 ## TODO
@@ -30,6 +30,7 @@ Thereafter, run `[bundle exec] rake fix` to update things.
 - split Brewfile into "critical" and "everything else"
 - store kitty config in repo
 - purge old installed formulae/casks (like old Pythons)
+- Just dependencies somewhat overlap with Rake dependencies. Not sure if the "accumulate advice" model translates well to Just, though.
 
 ## QMK
 
