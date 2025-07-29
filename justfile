@@ -1,4 +1,4 @@
-set shell := ["zsh", "-cu"]
+set shell := ["zsh", "-c"]
 
 default:
   just --list
