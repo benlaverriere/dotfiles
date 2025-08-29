@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-
-set -euo pipefail
-
-echo "Tunneling port 5277 with adb..."
-adb forward tcp:5277 tcp:5277
-
-$ANDROID_HOME/extras/google/auto/desktop-head-unit
