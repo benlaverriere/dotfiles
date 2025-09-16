@@ -11,8 +11,6 @@ set secure
 
 augroup FileTypes
   autocmd!
-  au BufRead,BufNewFile *.md set filetype=markdown
-  au BufRead,BufNewFile *.todo set filetype=markdown
   au BufRead,BufNewFile *.thor set filetype=ruby
   au BufRead,BufNewFile Podfile set filetype=ruby
   au BufRead,BufNewFile *.gitcommit set filetype=gitcommit
@@ -20,6 +18,16 @@ augroup FileTypes
   au BufRead,BufNewFile Matchfile set filetype=ruby
   au BufRead,BufNewFile Pluginfile set filetype=ruby
   au BufRead,BufNewFile Scanfile set filetype=ruby
+augroup END
+
+augroup Markdown
+  autocmd!
+
+  au BufRead,BufNewFile *.md set filetype=markdown
+  au BufRead,BufNewFile *.todo set filetype=markdown
+
+  " TODO: this leads to orphaned kokoi processes, whoops
+  command Preview execute "!nohup kokoi % > /dev/null &" | write
 augroup END
 
 augroup Pollen
@@ -183,25 +191,24 @@ augroup typescript
   autocmd FileType typescript :set makeprg=tsc
 augroup END
 
-" Spelling
-nnoremap <leader>s :setlocal spell! spelllang=en_us<cr>
 
 " leader commands
 let mapleader = " "
-nnoremap          <leader>ag  :Ag<cr>
-nnoremap          <leader>ale :call ToggleALEAutofix()<cr>
+nnoremap <leader>ag  :Ag<cr>
+nnoremap <leader>ale :call ToggleALEAutofix()<cr>
 nnoremap <silent> <leader>d   <Plug>DashSearch
-nnoremap          <leader>ev  :split $MYVIMRC<cr>
-nnoremap          <leader>f   :Files<cr>
-nnoremap          <leader>g   :Rg<cr>
+nnoremap <leader>ev  :split $MYVIMRC<cr>
+nnoremap <leader>f   :Files<cr>
+nnoremap <leader>g   :Rg<cr>
 nnoremap <silent> <leader>gg  :Rg <C-R><C-W><cr>
-nnoremap          <leader>gy  :Goyo<cr>
-nnoremap          <leader>h   :nohlsearch<cr>
-nnoremap          <Leader>m   <Plug>ToggleMarkbar
-nnoremap          <leader>mg  /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
-nnoremap          <leader>rg  :Rg<cr>
-nnoremap          <leader>sv  :source $MYVIMRC<cr>
-nnoremap          <leader>ww  :Windows<cr>
+nnoremap <leader>gy  :Goyo<cr>
+nnoremap <leader>h   :nohlsearch<cr>
+nnoremap <Leader>m   <Plug>ToggleMarkbar
+nnoremap <leader>mg  /\(<<<<<<<\\|>>>>>>>\\|=======\)<cr>zz
+nnoremap <leader>rg  :Rg<cr>
+nnoremap <leader>s   :setlocal spell! spelllang=en_us<cr>
+nnoremap <leader>sv  :source $MYVIMRC<cr>
+nnoremap <leader>ww  :Windows<cr>
 
 if has('nvim')
   nnoremap <leader>evv :split ~/.vimrc<cr>
