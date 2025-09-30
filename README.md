@@ -31,6 +31,8 @@ Thereafter, run `just fix` to update things.
 - store kitty config in repo
 - purge old installed formulae/casks (like old Pythons)
 - Just dependencies somewhat overlap with Rake dependencies. Not sure if the "accumulate advice" model translates well to Just, though.
+- remove qmk from stow_it_all
+- set up SSH for GitHub before trying to clone Vim plugins
 
 ## QMK
 
