@@ -12,6 +12,7 @@
   todo = "!f() { git diff --name-only ${1-origin/main} --diff-filter=d -z | xargs -0 rg --pretty --sort=path TODO; }; f"
   up = pull --rebase --autostash
   which = "!f() { git config --get alias.${1}; }; f"
+  xswitch = "!f() { git switch ${1--} && tuist install && tuist generate; }; f"
 [color]
   gui = true
   diff = auto
