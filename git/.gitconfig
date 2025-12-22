@@ -44,7 +44,7 @@
   submodule = log
   colorMoved = default
 [diff "json"]
-  command = jd -git-diff-driver -color -set
+  command = ~/git-diff-json.sh
 [diff "xcdiff"]
   command = ~/git-xcdiff.sh
 [filter "lfs"]
