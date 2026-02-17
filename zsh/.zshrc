@@ -32,6 +32,7 @@ path+=/usr/local/sbin # for Homebrew formulae
 path+="$(python3 -m site --user-base)/bin"
 path+="/usr/local/opt/arm-gcc-bin@8/bin" # for QMK
 path+="/usr/local/texlive/2025/bin/universal-darwin"
+path+="$HOME/.local/bin" # for Claude
 export PATH
 
 chruby_hosts=(katahdin)
