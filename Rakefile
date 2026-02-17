@@ -34,6 +34,6 @@ def log_task_end(task)
   puts "┗━ End #{task.name}"
 end
 
-def homebrew(arg_string, **kwargs)
-  RakeHelpers.system_with_passthrough("HOMEBREW_NO_AUTO_UPDATE=1 brew #{arg_string}", **kwargs)
+def homebrew(arg_string, **)
+  RakeHelpers.system_with_passthrough("HOMEBREW_NO_AUTO_UPDATE=1 brew #{arg_string}", **)
 end
