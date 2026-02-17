@@ -24,8 +24,11 @@ GEM
     rubocop-rspec (1.4.0)
 
 PLATFORMS
+  arm64-darwin
+  ruby
   universal-darwin-25
   x86_64-darwin-24
+  x86_64-linux
 
 DEPENDENCIES
   rake
@@ -35,4 +38,4 @@ DEPENDENCIES
   rubocop-rspec
 
 BUNDLED WITH
-  4.0.5
+   2.5.22
