@@ -61,11 +61,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  rake
+  rake (~> 13.3)
   rspec (~> 3.13)
-  rubocop
-  rubocop-rake
-  rubocop-rspec
+  rubocop (~> 1.84)
+  rubocop-rake (~> 0.7)
+  rubocop-rspec (~> 3.9)
 
 BUNDLED WITH
    2.5.22
