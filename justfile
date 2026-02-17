@@ -45,6 +45,10 @@ configure-terminfo:
 install-ruby:
   script/ruby.sh
 
+[group('setup')]
+ensure-correct-ruby:
+  rbenv install --skip-existing
+
 # apply updates to all modules
 [group('frequent')]
 [group('fix')]
@@ -56,7 +60,7 @@ fix: bundle fix-most
 check: bundle check-most
 
 [group('frequent')]
-bundle:
+bundle: ensure-correct-ruby
   bundle check || bundle install
 
 [group('frequent')]

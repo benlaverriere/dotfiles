@@ -4,17 +4,14 @@
 # https://github.com/monfresh/install-ruby-on-macos
 
 # Replicating the Brewfile a bit, but this allows us to run ruby.sh before installing the whole Brewfile
-brew install ruby-install
-brew install chruby
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+brew install ruby-build
+brew install rbenv
+# TODO: do whatever setup rbenv wants
 
-# Install a new Ruby and use it
-ruby-install ruby
-chruby ruby
+# Install the version in .ruby-version
+rbenv install
 
 # Bundler
 gem update --system
 gem install bundler && gem update bundler
-number_of_cores=$(sysctl -n hw.ncpu)
-bundle config --global jobs $((number_of_cores - 1))
 bundle install
