@@ -4,6 +4,7 @@
 alias g="git"
 alias ll="eza --long --all --git --icons --header"
 alias lll="ls -oAhG"
+alias v="nvim"
 alias w="watson"
 alias y="n yarn"
 

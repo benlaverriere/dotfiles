@@ -150,6 +150,11 @@ if has('nvim')
 else
   highlight Search gui=underline cterm=underline
   highlight Comment cterm=italic
+
+  set shortmess+=I
+  set statusline=
+  set statusline+=%#ErrorMsg#
+  set statusline+=This\ is\ vanilla\ Vim,\ you\ probably\ want\ NeoVim\ instead.
 endif
 
 highlight link TK ALEError
