@@ -1,4 +1,5 @@
 set shell := ["zsh", "-c"]
+export HOMEBREW_NO_AUTO_UPDATE := "1"
 
 default:
   just --list
@@ -47,6 +48,8 @@ install-ruby:
 
 [group('setup')]
 ensure-correct-ruby:
+  brew install rbenv --quiet
+  brew install ruby-build --quiet
   rbenv install --skip-existing
 
 # apply updates to all modules
