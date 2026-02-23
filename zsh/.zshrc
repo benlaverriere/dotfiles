@@ -78,9 +78,9 @@ else
 fi
 
 if [ $(uname -p) = 'arm' ]; then
-  export EDITOR=/opt/homebrew/bin/vim
+  export EDITOR=/opt/homebrew/bin/nvim
 else
-  export EDITOR=/usr/local/bin/vim
+  export EDITOR=/usr/local/bin/nvim
 fi
 export PAGER="less -RF -+X"
 
