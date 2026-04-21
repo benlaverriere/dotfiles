@@ -18,6 +18,7 @@ augroup FileTypes
   au BufRead,BufNewFile Matchfile set filetype=ruby
   au BufRead,BufNewFile Pluginfile set filetype=ruby
   au BufRead,BufNewFile Scanfile set filetype=ruby
+  au BufRead,BufNewFile *.json.tpl set filetype=json
 augroup END
 
 augroup Markdown

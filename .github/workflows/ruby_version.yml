@@ -1,0 +1,16 @@
+name: Validate Ruby version
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ruby_version:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - name: Check if ruby-build can install requested version
+      run: rbenv install --list-all | grep '^$(cat .ruby-version)$'
+
