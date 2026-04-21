@@ -8,9 +8,16 @@ on:
 
 jobs:
   ruby_version:
-    runs-on: ubuntu-latest
+    runs-on: macos-26
     steps:
     - uses: actions/checkout@v6
+    - name: Install rbenv
+      run: |
+        brew install rbenv
+        brew install ruby-build
     - name: Check if ruby-build can install requested version
-      run: rbenv install --list-all | grep '^$(cat .ruby-version)$'
+      run: |
+        cat .ruby-version
+        rbenv install --list-all
+        rbenv install --list-all | grep "^$(cat .ruby-version)$"
 
