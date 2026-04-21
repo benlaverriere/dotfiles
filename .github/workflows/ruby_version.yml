@@ -16,5 +16,8 @@ jobs:
         brew install rbenv
         brew install ruby-build
     - name: Check if ruby-build can install requested version
-      run: rbenv install --list-all | grep '^$(cat .ruby-version)$'
+      run: |
+        cat .ruby-version
+        rbenv install --list-all
+        rbenv install --list-all | grep '^$(cat .ruby-version)$'
 
