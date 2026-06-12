@@ -1,1 +1,2 @@
-let b:ale_fixers = ['rubocop', 'remove_trailing_lines', 'trim_whitespace']
+let b:ale_fixers = ['rubyfmt']
+let b:ale_linters = []

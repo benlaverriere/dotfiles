@@ -1,4 +1,4 @@
-name: Rubocop
+name: rubyfmt
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  rubocop:
-    runs-on: ubuntu-latest
+  rubyfmt:
+    runs-on: macos-latest
     strategy:
       matrix:
         ruby-version: ['3.2', '3.4', '4.0', head]
@@ -18,6 +18,9 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Run Rubocop
-      run: bundle exec rubocop
+    - name: Install rubyfmt
+      run: |
+        brew install rubyfmt
+        brew install fd
+    - name: Run rubyfmt
+      run: rubyfmt -c . Rakefile $(fd "rake")

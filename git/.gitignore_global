@@ -16,3 +16,5 @@ tags.temp
 .ignore
 
 .vimrc
+
+**/.claude/settings.local.json
