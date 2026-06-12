@@ -118,8 +118,6 @@ colorscheme solarized8_flat
 
 let g:ale_fix_on_save = 1
 let g:ale_linters_ignore = {'tex': ['lacheck']}
-" if working outside a project with Bundler, disable the following:
-let g:ale_ruby_rubocop_executable = 'bundle'
 function! ToggleALEAutofix()
     if g:ale_fix_on_save
         let g:ale_fix_on_save = 0
