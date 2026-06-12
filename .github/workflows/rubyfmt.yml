@@ -21,4 +21,4 @@ jobs:
     - name: Install rubyfmt
       run: brew install rubyfmt
     - name: Run rubyfmt
-      run: rubyfmt -c .
+      run: rubyfmt -c . Rakefile rakelib
