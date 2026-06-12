@@ -19,6 +19,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
     - name: Install rubyfmt
-      run: brew install rubyfmt
+      run: |
+        brew install rubyfmt
+        brew install fd
     - name: Run rubyfmt
-      run: rubyfmt -c . Rakefile rakelib
+      run: rubyfmt -c . Rakefile $(fd "rake")
