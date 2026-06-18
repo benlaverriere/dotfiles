@@ -10,7 +10,7 @@ jobs:
   ruby_version:
     runs-on: macos-26
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Install rbenv
       run: |
         brew install rbenv
