@@ -1,0 +1,103 @@
+#!/usr/bin/env zsh
+#
+# Fire a macOS notification when a long-running command finishes.
+#
+#   notify bundle exec rspec     # run the command, report its exit status
+#   bundle exec rspec | notify   # pass stdin through, report the last line
+#
+# The prefix form exits with the wrapped command's status, so it is safe inside
+# `&&` chains. The pipe form can't know the upstream command's status: zsh only
+# exposes $pipestatus to the shell that built the pipeline, not to a member of
+# it. So the pipe form reports completion without success or failure.
+#
+# Set NOTIFY_SOUND to any name from /System/Library/Sounds to make noise.
+# Set NOTIFY_DEBUG to let terminal-notifier's own output through.
+
+emulate -L zsh
+
+readonly SELF=${0:t}
+
+usage() {
+  print -ru2 -- "usage: $SELF <command> [args...]"
+  print -ru2 -- "       <command> | $SELF"
+  exit 64
+}
+
+(( $+commands[terminal-notifier] )) ||
+  print -ru2 -- "$SELF: terminal-notifier not installed; run \`brew install terminal-notifier\`"
+
+# Bundle ID of the terminal to raise when the notification is clicked.
+terminal_bundle_id() {
+  case ${TERM_PROGRAM-} in
+    iTerm.app)      print -r -- com.googlecode.iterm2 ;;
+    Apple_Terminal) print -r -- com.apple.Terminal ;;
+    ghostty)        print -r -- com.mitchellh.ghostty ;;
+    *)              [[ -n ${KITTY_WINDOW_ID-} ]] && print -r -- net.kovidgoyal.kitty ;;
+  esac
+}
+
+human_duration() {
+  local -i s=$1
+  if (( s < 60 )); then
+    print -r -- "${s}s"
+  elif (( s < 3600 )); then
+    print -r -- "$((s / 60))m $((s % 60))s"
+  else
+    print -r -- "$((s / 3600))h $((s % 3600 / 60))m"
+  fi
+}
+
+notify() {
+  (( $+commands[terminal-notifier] )) || return 0
+
+  local title=$1 message=$2
+  local -a args=(
+    -title "$title"
+    -subtitle "${PWD:t} · $(human_duration $SECONDS)"
+    -message "${message:-(no output)}"
+  )
+
+  local bundle_id
+  bundle_id=$(terminal_bundle_id)
+  [[ -n $bundle_id ]] && args+=(-activate "$bundle_id")
+  [[ -n ${NOTIFY_SOUND-} ]] && args+=(-sound "$NOTIFY_SOUND")
+
+  if [[ -n ${NOTIFY_DEBUG-} ]]; then
+    print -ru2 -- "$SELF: $commands[terminal-notifier]" ${(q-)args}
+    terminal-notifier $args >&2
+  else
+    # terminal-notifier chatters on stdout/stderr; neither belongs in a pipeline.
+    terminal-notifier $args >/dev/null 2>&1
+  fi
+}
+
+if (( $# == 0 )); then
+  [[ -t 0 ]] && usage
+
+  # Stream stdin straight through, stashing only the final line to summarize.
+  # awk holds one line rather than buffering the whole stream, and writes to a
+  # real file because /dev/fd tricks are unavailable under some sandboxes.
+  typeset tail_file
+  tail_file=$(mktemp "${TMPDIR:-/tmp}/notify.XXXXXX") || exit 1
+  trap 'rm -f "$tail_file"' EXIT INT TERM
+
+  awk -v out="$tail_file" '{ print; last = $0 } END { print last > out }'
+
+  # Strip terminal escapes so the notification isn't full of control codes.
+  typeset last_line
+  last_line=$(sed $'s/\x1b\[[0-9;?]*[a-zA-Z]//g' "$tail_file" | tr -d '\r')
+
+  notify '🔔 Command finished' "$last_line"
+  exit 0
+fi
+
+"$@"
+typeset -i exit_code=$?
+
+if (( exit_code == 0 )); then
+  notify '✅ Command succeeded' "$*"
+else
+  notify "💥 Command failed (exit $exit_code)" "$*"
+fi
+
+exit $exit_code

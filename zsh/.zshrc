@@ -52,6 +52,8 @@ else
   fi
 fi
 
+export PATH="/opt/homebrew/bin:$PATH"
+
 # shellcheck source=../shared_shell/bin/git-prompt.sh
 source git-prompt.sh
 
@@ -83,13 +85,6 @@ else
   export EDITOR=/usr/local/bin/nvim
 fi
 export PAGER="less -RF -+X"
-
-# use Homebrew's OpenSSL 1.1 rather than the one installed by ruby-build, so that it gets upgraded
-# $(brew --prefix openssl@1.1) gives this value, but brew is slow, so we'll hardcode for now
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
-
-# heroku autocomplete setup, modified to use `~` rather than an explicit username
-HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
