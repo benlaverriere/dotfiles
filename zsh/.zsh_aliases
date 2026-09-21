@@ -66,9 +66,21 @@ alias watson-daily-report='watson report -d --csv | perl -pe "s/(.+59,[^,]+?,)(.
 
 alias booted-simulator-name="xcrun simctl list devices booted -j | jq -j '.devices[] | select(length > 0) | map_values(.name)[0]'"
 
+function repo {
+  git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//'
+}
 function ns {
   JAVA_HOME= NIX_SHELL_PRESERVE_PROMPT=1 nix-shell ${@:1}
 }
+
+function ns {
+  case "$(repo)" in
+    (templater) aws-vault exec ro -- nix-shell ;;
+    (hedwig|pulp|mockingjay|nest|wilson) JAVA_HOME= nix develop ;;
+    (*) JAVA_HOME= NIX_SHELL_PRESERVE_PROMPT=1 nix-shell ;;
+  esac
+}
+alias nd="ns"
 
 alias eg='exa --long --git'
 alias tt=tuist
