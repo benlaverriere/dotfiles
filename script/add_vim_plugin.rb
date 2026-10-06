@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require "active_support/core_ext/object/blank"
 require "uri"
 
 if ARGV.empty? || ARGV.length > 3

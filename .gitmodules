@@ -116,3 +116,6 @@
 [submodule "vim-rainbow"]
 	path = vim/.vim/pack/benlaverriere/start/vim-rainbow
 	url = https://github.com/frazrepo/vim-rainbow
+[submodule "vim-fold-rspec"]
+	path = vim/.vim/pack/benlaverriere/start/vim-fold-rspec
+	url = https://github.com/rlue/vim-fold-rspec

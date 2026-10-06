@@ -5,5 +5,11 @@
   ],
   "git-submodules": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["ruby"],
+      "minimumReleaseAge": "7 days"
+    }
+  ]
 }

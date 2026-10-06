@@ -75,9 +75,9 @@ function ns {
 
 function ns {
   case "$(repo)" in
-    (templater) aws-vault exec ro -- nix-shell ;;
-    (hedwig|pulp|mockingjay|nest|wilson) JAVA_HOME= nix develop ;;
-    (*) JAVA_HOME= NIX_SHELL_PRESERVE_PROMPT=1 nix-shell ;;
+    (templater) aws-vault exec ro -- nix-shell ${@:1};;
+    (hedwig|pulp|mockingjay|nest|wilson|clippy) JAVA_HOME= nix develop ${@:1};;
+    (*) JAVA_HOME= NIX_SHELL_PRESERVE_PROMPT=1 nix-shell ${@:1};;
   esac
 }
 alias nd="ns"
